@@ -4,7 +4,7 @@
   --bg: #faf8f5;
   --bg-card: #ffffff;
   --text: #1a1a2e;
-  --text-muted: #6b6b7b;
+  --text-muted: #5e5e6c;
   --accent: #b8926a;
   --accent-light: rgba(184,146,106,.12);
   --accent-hover: #a07d58;
@@ -115,9 +115,9 @@ h3 { font-size: 1.2rem; font-weight: 600; }
 .btn-primary { background: var(--accent-text); color: #fff; }
 .btn-primary:hover { background: #5a432a; transform: translateY(-1px); }
 .btn-outline {
-  border: 1.5px solid var(--accent); color: var(--accent); background: transparent;
+  border: 1.5px solid var(--accent-text); color: var(--accent-text); background: transparent;
 }
-.btn-outline:hover { background: var(--accent); color: #fff; }
+.btn-outline:hover { background: var(--accent-text); color: #fff; }
 
 /* CARDS */
 .grid { display: grid; gap: 1.25rem; }
@@ -190,7 +190,7 @@ h3 { font-size: 1.2rem; font-weight: 600; }
   padding: 2.5rem 0; text-align: center;
   font-size: .82rem; color: var(--text-muted);
 }
-.footer a { color: var(--accent); text-decoration: none; }
+.footer a { color: var(--accent-text); text-decoration: none; }
 .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-top: .75rem; }
 
 /* MOBILE */
