@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /pitch/
+
+Sitemap: https://pfassmeyer.github.io/mary-site-preview/sitemap.xml
