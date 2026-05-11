@@ -97,7 +97,7 @@ h3 { font-size: 1.2rem; font-weight: 600; }
 .hero-trust strong { color: var(--text); }
 
 /* BADGE */
-.badge-arzt {
+.badge-proof {
   display: inline-block;
   background: linear-gradient(135deg, #2d6a4f 0%, #40916c 100%);
   color: #fff; font-family: 'Inter', sans-serif;
