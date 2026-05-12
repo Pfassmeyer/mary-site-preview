@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Mary Dashboard — Sample Snapshot 2026-05-11</title>
+<style>
+  *,*::before,*::after { box-sizing: border-box; }
+  :root {
+    --bg: #fafaf9;
+    --panel: #ffffff;
+    --ink: #1c1917;
+    --muted: #57534e;
+    --accent: #0f766e;
+    --accent-light: #ccfbf1;
+    --warn: #b45309;
+    --warn-light: #fef3c7;
+    --line: #e7e5e4;
+    --radius: 14px;
+    --shadow: 0 1px 2px rgba(0,0,0,.04), 0 4px 12px rgba(0,0,0,.04);
+  }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 28px 20px 64px; }
+  header.head { padding-bottom: 18px; border-bottom: 1px solid var(--line); margin-bottom: 24px; }
+  header.head .kicker { color: var(--accent); font-size: .82rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+  header.head h1 { font-size: 1.85rem; margin: 4px 0 6px; line-height: 1.2; }
+  header.head .sub { color: var(--muted); font-size: .95rem; }
+  .badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: .78rem; font-weight: 600; }
+  .badge.sample { background: var(--warn-light); color: var(--warn); }
+  .badge.live { background: var(--accent-light); color: var(--accent); }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px 22px; margin: 0 0 18px; }
+  h2 { font-size: 1.15rem; margin: 0 0 12px; letter-spacing: -.005em; }
+  ul.exec { margin: 0; padding: 0; list-style: none; }
+  ul.exec li { padding: 9px 0; border-bottom: 1px dashed var(--line); font-size: .96rem; }
+  ul.exec li:last-child { border-bottom: 0; }
+  ul.exec li strong { color: var(--accent); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 640px) { .grid2 { grid-template-columns: 1fr; } }
+  .kpi { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+  .kpi .label { color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
+  .kpi .val { font-size: 1.6rem; font-weight: 700; margin-top: 2px; }
+  .kpi .delta { color: var(--accent); font-size: .82rem; margin-top: 2px; }
+  table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+  th { text-align: left; font-weight: 600; padding: 8px 10px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: .82rem; text-transform: uppercase; letter-spacing: .03em; }
+  td { padding: 10px; border-bottom: 1px solid var(--line); }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  tr:last-child td { border-bottom: 0; }
+  .bar { background: var(--accent-light); height: 6px; border-radius: 3px; margin-top: 4px; }
+  .bar > div { background: var(--accent); height: 100%; border-radius: 3px; }
+  .footnote { color: var(--muted); font-size: .85rem; padding: 14px 18px; background: var(--warn-light); border-left: 3px solid var(--warn); border-radius: 6px; margin-top: 8px; }
+  .meta { color: var(--muted); font-size: .82rem; margin-top: 28px; text-align: center; padding-top: 18px; border-top: 1px solid var(--line); }
+  .meta code { background: var(--line); padding: 2px 6px; border-radius: 4px; font-size: .82rem; }
+</style>
+</head><body>
+<div class="wrap">
+
+<header class="head">
+  <div class="kicker">Brow &amp; Medical Bar by Mary — Operator Dashboard</div>
+  <h1>Snapshot — 11. Mai 2026</h1>
+  <div class="sub">Zeitfenster: 13. April 2026 → 11. Mai 2026 &nbsp;·&nbsp; <span class="badge sample">SAMPLE-DATEN</span></div>
+</header>
+
+<div class="card">
+  <h2>Executive Summary</h2>
+  <ul class="exec">
+    <li><strong>Search Console</strong>: <em>nicht verbunden</em> — GSC-Property-Auth fehlt. Tag 23 plug-in via Service-Account.</li>
+    <li><strong>Google Business Profile</strong>: <em>nicht verbunden</em> — GBP-Inhaberschaft wird nach Laura-Transfer verfügbar.</li>
+    <li><strong>Shore-Buchungen</strong>: <strong>21 Buchungen</strong>, Umsatz <strong>10.968,00 €</strong>.</li>
+    <li><strong>Cohorts</strong>: letzter Monat 6 Neukund:innen, ø LTV-3mo <strong>645,18 €</strong>.</li>
+  </ul>
+</div>
+
+<div class="grid2">
+  <div class="kpi"><div class="label">Buchungen (28 Tage)</div><div class="val">21</div><div class="delta">Sample</div></div>
+  <div class="kpi"><div class="label">Umsatz (28 Tage)</div><div class="val">10.968 €</div><div class="delta">Sample</div></div>
+  <div class="kpi"><div class="label">Aktive Cohort</div><div class="val">6 / 11</div><div class="delta">Mai / April</div></div>
+  <div class="kpi"><div class="label">UTM Coverage</div><div class="val">100%</div><div class="delta">Tracking sauber</div></div>
+</div>
+
+<div class="card">
+  <h2>Attribution by Source</h2>
+  <table>
+    <thead><tr><th>Quelle</th><th style="text-align:right">Buchungen</th><th style="text-align:right">Umsatz</th><th>Anteil</th></tr></thead>
+    <tbody>
+      <tr><td>google</td><td class="num">6</td><td class="num">3.200,00 €</td><td><div class="bar"><div style="width:29.2%"></div></div></td></tr>
+      <tr><td>niche-page</td><td class="num">3</td><td class="num">2.270,00 €</td><td><div class="bar"><div style="width:20.7%"></div></div></td></tr>
+      <tr><td>email</td><td class="num">2</td><td class="num">1.998,00 €</td><td><div class="bar"><div style="width:18.2%"></div></div></td></tr>
+      <tr><td>whatsapp</td><td class="num">4</td><td class="num">1.430,00 €</td><td><div class="bar"><div style="width:13.0%"></div></div></td></tr>
+      <tr><td>direct</td><td class="num">3</td><td class="num">1.280,00 €</td><td><div class="bar"><div style="width:11.7%"></div></div></td></tr>
+      <tr><td>instagram</td><td class="num">3</td><td class="num">790,00 €</td><td><div class="bar"><div style="width:7.2%"></div></div></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h2>Cohorts (Retention &amp; Wiederbuchungen)</h2>
+  <table>
+    <thead><tr><th>Cohort</th><th style="text-align:right">n</th><th style="text-align:right">Umsatz M0</th><th style="text-align:right">Umsatz M3</th><th style="text-align:right">Umsatz M12</th><th style="text-align:right">Ret M3</th></tr></thead>
+    <tbody>
+      <tr><td>April 2026</td><td class="num">11</td><td class="num">7.619,00 €</td><td class="num">0,00 €</td><td class="num">0,00 €</td><td class="num">0,0 %</td></tr>
+      <tr><td>Mai 2026</td><td class="num">6</td><td class="num">3.169,00 €</td><td class="num">0,00 €</td><td class="num">0,00 €</td><td class="num">0,0 %</td></tr>
+    </tbody>
+  </table>
+  <p class="footnote">Retention-Spalten füllen sich automatisch, sobald 3+ Monate echte Shore-Daten vorliegen. Heute: zu früh.</p>
+</div>
+
+<div class="card">
+  <h2>Was hier nicht steht (Ehrlichkeit)</h2>
+  <ul class="exec">
+    <li>Diese Zahlen sind <strong>Sample-Daten</strong> zur Validierung der Pipeline — keine echten Shore-Buchungen.</li>
+    <li><strong>Tag 23 plug-in:</strong> Sobald Laura die GBP-Inhaberschaft überträgt und Pascal die Search-Console-Property verifiziert hat, ziehen die obigen vier Karten echte Daten — ohne Code-Änderung.</li>
+    <li><strong>Plan B (parallel):</strong> iPad am Empfang mit 30-Sekunden-Frage „Wie haben Sie uns gefunden?" → 1.200 Datenpunkte in 6 Wochen, unabhängig von GBP-Transfer.</li>
+    <li><strong>Review-Auswertung der 1.904 Bewertungen:</strong> Pipeline ist fertig, Test-Lauf zeigt Top-Wünsche (Body-Contouring, PMU-Entfernung, Lymphdrainage) und stärkste Mitarbeiter-Erwähnungen (Mary 55×, Sarah 12×, Cecilia 6×). Echter Lauf nach GBP-Transfer.</li>
+  </ul>
+</div>
+
+<div class="meta">
+  Quelle: <code>bun src/cli.ts snapshot</code> &nbsp;·&nbsp; Snapshot-File: <code>M3_DASHBOARD/output/snapshot.{json,md}</code> &nbsp;·&nbsp; Generated 2026-05-11
+</div>
+
+</div>
+</body></html>
