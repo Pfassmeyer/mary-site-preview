@@ -1,0 +1,174 @@
+{
+  "generated_at": "2026-05-12T01:30:00+02:00",
+  "data_state": "sample",
+  "real_data_eta": "Nach Laura-GBP-Transfer (typisch 5-14 Tage)",
+  "studio": {
+    "name": "Brow & Medical Bar by Mary",
+    "location": "Bleibtreustraße 18, 10623 Berlin-Charlottenburg",
+    "tel": "+49 30 56005625",
+    "founder": "Mary",
+    "team_size_practitioners": 3
+  },
+  "pulse": {
+    "booked_chair_hours_28d": 21,
+    "revenue_28d_eur": 10968,
+    "new_customers_28d": 17,
+    "returning_customers_28d": 4,
+    "avg_booking_value_eur": 522.29,
+    "review_score_28d": 4.74,
+    "review_count_28d": 12,
+    "niche_pages_live": 10,
+    "niche_pages_indexed_pct": 100,
+    "utm_coverage_pct": 100,
+    "sparklines": {
+      "bookings_daily": [0,2,1,3,0,1,4,2,0,1,3,0,2,1,0,4,1,0,2,1,3,2,0,1,2,3,1,2],
+      "revenue_daily_eur": [0,820,520,1100,0,420,1380,990,0,460,1340,0,860,520,0,1640,520,0,820,520,1340,990,0,520,820,1190,520,820]
+    }
+  },
+  "attribution": [
+    { "source": "google", "label": "Google Organic + Maps", "bookings": 6, "revenue_eur": 3200, "color": "#7a5e3f" },
+    { "source": "niche-page", "label": "Niche-Pages (Pascal)", "bookings": 3, "revenue_eur": 2270, "color": "#b8926a" },
+    { "source": "email", "label": "E-Mail-Kampagne", "bookings": 2, "revenue_eur": 1998, "color": "#2d6a4f" },
+    { "source": "whatsapp", "label": "WhatsApp-Kampagne", "bookings": 4, "revenue_eur": 1430, "color": "#40916c" },
+    { "source": "direct", "label": "Direkt / Stammkunden", "bookings": 3, "revenue_eur": 1280, "color": "#c9a87b" },
+    { "source": "instagram", "label": "Instagram / Social", "bookings": 3, "revenue_eur": 790, "color": "#e07856" }
+  ],
+  "cohorts": [
+    { "month": "2025-11", "label": "Nov 2025", "n": 18, "rev_m0": 3200, "rev_m1": 2100, "rev_m3": 1450, "rev_m6": 820, "rev_m12": 650, "ret_m3": 0.39, "ret_m6": 0.28, "ret_m12": 0.18 },
+    { "month": "2025-12", "label": "Dez 2025", "n": 24, "rev_m0": 4180, "rev_m1": 2620, "rev_m3": 1980, "rev_m6": 1110, "rev_m12": null, "ret_m3": 0.42, "ret_m6": 0.32, "ret_m12": null },
+    { "month": "2026-01", "label": "Jan 2026", "n": 31, "rev_m0": 5390, "rev_m1": 3210, "rev_m3": 2510, "rev_m6": null, "rev_m12": null, "ret_m3": 0.45, "ret_m6": null, "ret_m12": null },
+    { "month": "2026-02", "label": "Feb 2026", "n": 28, "rev_m0": 4720, "rev_m1": 2950, "rev_m3": null, "rev_m6": null, "rev_m12": null, "ret_m3": null, "ret_m6": null, "ret_m12": null },
+    { "month": "2026-03", "label": "Mär 2026", "n": 35, "rev_m0": 6090, "rev_m1": 3640, "rev_m3": null, "rev_m6": null, "rev_m12": null, "ret_m3": null, "ret_m6": null, "ret_m12": null },
+    { "month": "2026-04", "label": "Apr 2026", "n": 42, "rev_m0": 7180, "rev_m1": null, "rev_m3": null, "rev_m6": null, "rev_m12": null, "ret_m3": null, "ret_m6": null, "ret_m12": null },
+    { "month": "2026-05", "label": "Mai 2026", "n": 12, "rev_m0": 2050, "rev_m1": null, "rev_m3": null, "rev_m6": null, "rev_m12": null, "ret_m3": null, "ret_m6": null, "ret_m12": null }
+  ],
+  "voice_of_customer": {
+    "total_reviews_analyzed": 120,
+    "real_review_corpus_size": 1904,
+    "cluster_count": 18,
+    "top_wishes": [
+      { "rank": 1, "wish": "Body-Contouring / Cryolipolyse", "confidence": 0.50, "cluster_size": 9, "evidence_ids": ["rev_069", "rev_117"], "sample": "Frage zu eurem Angebot: macht ihr auch Body-Contouring / Cryolipolyse? Wäre interessiert.", "revenue_potential": "hoch" },
+      { "rank": 2, "wish": "Permanent-Make-up Entfernung", "confidence": 0.50, "cluster_size": 9, "evidence_ids": ["rev_117"], "sample": "Frage: bietet ihr eigentlich auch Permanent-Make-up Entfernung an? Hab von früher noch Reste die weg sollen.", "revenue_potential": "mittel" },
+      { "rank": 3, "wish": "Lymphdrainage", "confidence": 0.40, "cluster_size": 9, "evidence_ids": ["rev_051"], "sample": "Frage: macht ihr auch Endermologie / Lymphdrainage? Würde gerne in einer Hand alles haben.", "revenue_potential": "mittel" },
+      { "rank": 4, "wish": "Microblading-Entfernung", "confidence": 0.40, "cluster_size": 8, "evidence_ids": ["rev_079"], "sample": "Frage am Rande: bietet ihr auch Microblading-Entfernung an für alte Behandlungen? Würde gerne wechseln.", "revenue_potential": "mittel" },
+      { "rank": 5, "wish": "Gesichts-Yoga / Massage", "confidence": 0.40, "cluster_size": 8, "evidence_ids": ["rev_089"], "sample": "Frage: gibt's bei euch auch Massage / Gesichts-Yoga? Würde gerne mehr Wellness mit reinnehmen.", "revenue_potential": "niedrig" },
+      { "rank": 6, "wish": "IPL", "confidence": 0.40, "cluster_size": 6, "evidence_ids": ["rev_106"], "sample": "Würde mir wünschen, dass ihr auch IPL anbietet — sonst alles perfekt!", "revenue_potential": "hoch" },
+      { "rank": 7, "wish": "Karbon-Peeling", "confidence": 0.50, "cluster_size": 3, "evidence_ids": ["rev_024", "rev_101"], "sample": "Frage in den Raum: bietet ihr auch Karbon-Peeling an? Wäre sehr interessiert wenn ja!", "revenue_potential": "mittel" },
+      { "rank": 8, "wish": "Wimpernlifting", "confidence": 0.50, "cluster_size": 3, "evidence_ids": ["rev_010", "rev_045"], "sample": "Frage: macht ihr auch Wimpernlifting? Würde ich gerne bei euch machen lassen weil ich so positives gehört habe.", "revenue_potential": "niedrig" },
+      { "rank": 9, "wish": "Wimpernverlängerung", "confidence": 0.50, "cluster_size": 3, "evidence_ids": ["rev_045"], "sample": "Würde gerne mal eine Wimpernverlängerung bei euch machen lassen, bietet ihr sowas an?", "revenue_potential": "niedrig" }
+    ],
+    "staff": [
+      { "name": "Mary", "role": "Inhaberin & Hauptbehandlerin", "mentions": 55, "avg_rating_when_mentioned": 4.98, "samples": ["Mesotherapie für Haarwuchs nach 4 Behandlungen sichtbar mehr Volumen. Mary war sehr ehrlich was möglich ist.", "Hatte etwas Schmerzen bei der Filler-Behandlung aber Mary war sofort da mit Kühlung. Ergebnis fantastisch.", "Lippen Filler — kein Entenschnabel, sieht aus als wären sie immer so gewesen. Mary versteht ihr Handwerk."] },
+      { "name": "Sarah", "role": "Brow Bar / Beratung", "mentions": 12, "avg_rating_when_mentioned": 5.00, "samples": ["Tolle Beratung von Sarah, fühle mich endlich gut aufgehoben. Microblading sieht super natürlich aus.", "NCTF Behandlung jetzt zum dritten Mal, Haut sieht so frisch aus. Sarah ist immer so freundlich.", "Hatte Angst vor Mesotherapie wegen Nadeln, aber Sarah hat alles begleitet — null Schmerzen."] },
+      { "name": "Cecilia", "role": "Hydrafacial / Laser", "mentions": 6, "avg_rating_when_mentioned": 4.83, "samples": ["Cecilia macht mein Hydrafacial — kompetent, freundlich, immer pünktlich. Lieblingsmitarbeiterin!", "Microneedling Termin top organisiert, Cecilia war so lieb und kompetent. Studio sehr sauber.", "Cecilia hat mein PicoPlus gemacht — sehr nett, sehr kompetent, hat Schmerzen minimiert."] },
+      { "name": "Laura", "role": "Brow-Lift", "mentions": 2, "avg_rating_when_mentioned": 5.00, "samples": ["Laura hat mir mein Brow-Lift gemacht — bin total happy! 💖 So entspannte Atmosphäre.", "Brow-Lift mit Laura — sehr geduldig, alles erklärt, Ergebnis natürlich."] }
+    ],
+    "objections": [
+      { "pattern": "Angst vor Behandlung", "frequency": 6, "avg_rating": 5.00, "type": "soft", "remedy": "30-Sek Pre-Treatment-Briefing (Pascal kann Template liefern)" },
+      { "pattern": "Schmerzempfinden", "frequency": 5, "avg_rating": 5.00, "type": "soft", "remedy": "Kühlung + Verlauf-Erklärung im Briefing" },
+      { "pattern": "Generelle Enttäuschung", "frequency": 3, "avg_rating": 1.33, "type": "hard", "remedy": "Postbehandlungs-Anruf am Tag 2 — fängt Beschwerden bevor sie öffentlich werden" },
+      { "pattern": "Asymmetrie / Schiefheit", "frequency": 3, "avg_rating": 1.67, "type": "hard", "remedy": "Kostenlose Korrektur klar kommunizieren (heute schon Praxis aber nicht im Erstgespräch)" },
+      { "pattern": "Preis-Wahrnehmung", "frequency": 3, "avg_rating": 2.33, "type": "mid", "remedy": "Value-Pre-Frame im Erstgespräch (vs. Kettenstudios)" },
+      { "pattern": "Unzufriedenheit ohne Grund", "frequency": 3, "avg_rating": 3.00, "type": "mid", "remedy": "Online-Buchung User-Test (Sample-Reviews nennen sie kompliziert)" },
+      { "pattern": "Wartezeit", "frequency": 3, "avg_rating": 3.67, "type": "mid", "remedy": "Puffer zwischen Slots oder SMS-Update bei Verzug" },
+      { "pattern": "Beratungs-Atmosphäre", "frequency": 2, "avg_rating": 2.00, "type": "hard", "remedy": "Nicht überbuchen an Reel-Filming-Tagen" },
+      { "pattern": "Schwellung / Downtime", "frequency": 2, "avg_rating": 3.00, "type": "soft", "remedy": "Realistische Downtime-Erwartung im Buchungs-Flow" },
+      { "pattern": "Hämatom / blaue Flecken", "frequency": 2, "avg_rating": 3.50, "type": "soft", "remedy": "Aftercare-PDF per WhatsApp 1h nach Behandlung" }
+    ],
+    "sentiment_28m": [
+      { "month": "2024-01", "n": 4, "rating": 4.75, "sentiment": 0.88, "rolling_3m": null },
+      { "month": "2024-02", "n": 5, "rating": 4.60, "sentiment": 0.80, "rolling_3m": 0.76 },
+      { "month": "2024-03", "n": 5, "rating": 4.20, "sentiment": 0.60, "rolling_3m": 0.67 },
+      { "month": "2024-04", "n": 5, "rating": 4.20, "sentiment": 0.60, "rolling_3m": 0.70 },
+      { "month": "2024-05", "n": 5, "rating": 4.80, "sentiment": 0.90, "rolling_3m": 0.77 },
+      { "month": "2024-06", "n": 5, "rating": 4.60, "sentiment": 0.80, "rolling_3m": 0.86 },
+      { "month": "2024-07", "n": 4, "rating": 4.75, "sentiment": 0.88, "rolling_3m": 0.79 },
+      { "month": "2024-08", "n": 5, "rating": 4.40, "sentiment": 0.70, "rolling_3m": 0.69 },
+      { "month": "2024-09", "n": 5, "rating": 4.00, "sentiment": 0.50, "rolling_3m": 0.67 },
+      { "month": "2024-10", "n": 5, "rating": 4.60, "sentiment": 0.80, "rolling_3m": 0.77 },
+      { "month": "2024-11", "n": 5, "rating": 5.00, "sentiment": 1.00, "rolling_3m": 0.83 },
+      { "month": "2024-12", "n": 5, "rating": 4.40, "sentiment": 0.70, "rolling_3m": 0.86 },
+      { "month": "2025-01", "n": 4, "rating": 4.75, "sentiment": 0.88, "rolling_3m": 0.78 },
+      { "month": "2025-02", "n": 4, "rating": 4.50, "sentiment": 0.75, "rolling_3m": 0.88 },
+      { "month": "2025-03", "n": 5, "rating": 5.00, "sentiment": 1.00, "rolling_3m": 0.71 },
+      { "month": "2025-04", "n": 4, "rating": 3.75, "sentiment": 0.38, "rolling_3m": 0.79 },
+      { "month": "2025-05", "n": 4, "rating": 5.00, "sentiment": 1.00, "rolling_3m": 0.76 },
+      { "month": "2025-06", "n": 5, "rating": 4.80, "sentiment": 0.90, "rolling_3m": 0.88 },
+      { "month": "2025-07", "n": 4, "rating": 4.50, "sentiment": 0.75, "rolling_3m": 0.76 },
+      { "month": "2025-08", "n": 4, "rating": 4.25, "sentiment": 0.63, "rolling_3m": 0.76 },
+      { "month": "2025-09", "n": 5, "rating": 4.80, "sentiment": 0.90, "rolling_3m": 0.84 },
+      { "month": "2025-10", "n": 4, "rating": 5.00, "sentiment": 1.00, "rolling_3m": 0.90 },
+      { "month": "2025-11", "n": 5, "rating": 4.60, "sentiment": 0.80, "rolling_3m": 0.89 },
+      { "month": "2025-12", "n": 4, "rating": 4.75, "sentiment": 0.88, "rolling_3m": 0.81 },
+      { "month": "2026-01", "n": 4, "rating": 4.50, "sentiment": 0.75, "rolling_3m": 0.88 },
+      { "month": "2026-02", "n": 3, "rating": 5.00, "sentiment": 1.00, "rolling_3m": 0.92 },
+      { "month": "2026-03", "n": 2, "rating": 5.00, "sentiment": 1.00, "rolling_3m": 1.00 },
+      { "month": "2026-05", "n": 1, "rating": 5.00, "sentiment": 1.00, "rolling_3m": null }
+    ]
+  },
+  "seo": {
+    "niche_pages": [
+      { "slug": "botox-maenner-berlin", "title": "Faltenbehandlung Männer Berlin", "live": true, "indexed": true, "lastmod": "2026-05-10", "schema": "BreadcrumbList", "priority": 0.9 },
+      { "slug": "sculptra-berlin", "title": "Sculptra Berlin-Charlottenburg", "live": true, "indexed": true, "lastmod": "2026-05-10", "schema": "Service + FAQPage", "priority": 0.9 },
+      { "slug": "fadenlifting-berlin", "title": "Fadenlifting Berlin", "live": true, "indexed": true, "lastmod": "2026-05-10", "schema": "Service + FAQPage", "priority": 0.9 },
+      { "slug": "pigmentflecken-berlin", "title": "Pigmentflecken Berlin", "live": true, "indexed": true, "lastmod": "2026-05-10", "schema": "Service + FAQPage", "priority": 0.9 },
+      { "slug": "kombi-behandlungen-berlin", "title": "Kombi-Behandlungen Berlin", "live": true, "indexed": true, "lastmod": "2026-05-10", "schema": "Service + FAQPage", "priority": 0.9 },
+      { "slug": "polynukleotide-pdrn-berlin", "title": "Polynukleotide / PDRN Beratung Berlin", "live": true, "indexed": true, "lastmod": "2026-05-11", "schema": "Service", "priority": 0.9 },
+      { "slug": "nctf-behandlung-berlin", "title": "NCTF Skinbooster Beratung Berlin", "live": true, "indexed": true, "lastmod": "2026-05-11", "schema": "Service", "priority": 0.9 },
+      { "slug": "rosacea-couperose-berlin", "title": "Rosacea / Couperose Berlin", "live": true, "indexed": true, "lastmod": "2026-05-11", "schema": "Service", "priority": 0.9 },
+      { "slug": "mesotherapie-beratung-berlin", "title": "Mesotherapie-Beratung Berlin", "live": true, "indexed": true, "lastmod": "2026-05-11", "schema": "Service", "priority": 0.9 },
+      { "slug": "laser-dunkle-haut-charlottenburg", "title": "Laser für dunkle Haut Charlottenburg", "live": true, "indexed": true, "lastmod": "2026-05-11", "schema": "Service", "priority": 0.9 }
+    ],
+    "search_console": {
+      "available": false,
+      "note": "Tag-23 plug-in via Service-Account. Heute Sample-Werte.",
+      "sample_top_queries": [
+        { "query": "faltenbehandlung männer berlin", "clicks": 12, "impressions": 218, "position": 4.2 },
+        { "query": "sculptra berlin", "clicks": 9, "impressions": 305, "position": 6.8 },
+        { "query": "fadenlifting charlottenburg", "clicks": 7, "impressions": 142, "position": 3.5 },
+        { "query": "pigmentflecken laser berlin", "clicks": 6, "impressions": 198, "position": 7.2 },
+        { "query": "kombi behandlung gesicht berlin", "clicks": 5, "impressions": 124, "position": 5.6 }
+      ]
+    }
+  },
+  "system_health": {
+    "components": [
+      { "id": "M11", "name": "Niche-Pages Pre-Build", "status": "live", "detail": "10 / 10 HTTP 200, alle in Sitemap, IndexNow gepingt 2026-05-11", "url": "https://pfassmeyer.github.io/mary-site-preview/sitemap.xml" },
+      { "id": "M3",  "name": "Dashboard CLI",          "status": "live", "detail": "1.036 LOC Bun TS, läuft auf Sample. Tag-23 plug-in via Env-Vars.", "url": null },
+      { "id": "M2",  "name": "Review Intelligence",    "status": "live", "detail": "1.927 LOC, 4/4 Tests grün, Sample-Lauf 0.9s, plug-in 1 Command.", "url": null },
+      { "id": "M6",  "name": "HWG Compliance Memo",    "status": "live", "detail": "1-Pager an Mary übergeben (10.05). Linter-Stufe pending.", "url": null },
+      { "id": "M9",  "name": "iPad Source-Capture",    "status": "planned", "detail": "Plan B falls GBP-Transfer >60d stalled. €40 Hardware + Tally Form.", "url": null },
+      { "id": "M5",  "name": "One-Day Indexation",     "status": "ready", "detail": "Aktiviert sobald Mary's Domain-Zugang da ist.", "url": null }
+    ],
+    "tag_23_countdown": {
+      "target": "GBP-Transfer + GSC Property-Verification",
+      "blocked_by": "Laura/Agentur hält Inhaberschaft",
+      "next_action": "Send 1: Laura-direkt-Nachricht (Pascal pending y-approval via Hermes)",
+      "fallback_after_days": 60,
+      "fallback_action": "M9 iPad-Source-Capture aktivieren"
+    }
+  },
+  "decisions_pending": [
+    {
+      "id": "D1",
+      "title": "Joint KPI staken: Revenue-per-Chair-Hour bei HWG-Quality",
+      "leverage": "Meadows #3 — Goal of the system",
+      "options": ["bestätigen", "anders formulieren", "vertagen"],
+      "default": "bestätigen"
+    },
+    {
+      "id": "D2",
+      "title": "Top-3 unmonetarisierte Wünsche prüfen — Body-Contouring, PMU-Entfernung, Lymphdrainage",
+      "leverage": "Meadows #11 — Stocks/Buffers (Service-Portfolio)",
+      "options": ["alle drei evaluieren", "nur eines", "keines"],
+      "default": "alle drei evaluieren"
+    },
+    {
+      "id": "D3",
+      "title": "Sarah-IG-Bot HWG-Remediation: Material Fillmed-Hinweis einbauen (Sarah 11.05 19:35 angefragt)",
+      "leverage": "Meadows #8 — Balancing loop (HWG-linter)",
+      "options": ["sofort patchen", "im nächsten Sprint", "Bot ersetzen"],
+      "default": "sofort patchen"
+    }
+  ]
+}

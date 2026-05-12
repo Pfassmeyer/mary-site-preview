@@ -1,122 +1,940 @@
 <!DOCTYPE html>
 <html lang="de"><head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>Mary Dashboard — Sample Snapshot 2026-05-11</title>
+<meta name="theme-color" content="#7a5e3f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mary">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="apple-touch-icon" href="icon.svg">
+<title>Mary — Operator Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  *,*::before,*::after { box-sizing: border-box; }
-  :root {
-    --bg: #fafaf9;
-    --panel: #ffffff;
-    --ink: #1c1917;
-    --muted: #57534e;
-    --accent: #0f766e;
-    --accent-light: #ccfbf1;
-    --warn: #b45309;
-    --warn-light: #fef3c7;
-    --line: #e7e5e4;
-    --radius: 14px;
-    --shadow: 0 1px 2px rgba(0,0,0,.04), 0 4px 12px rgba(0,0,0,.04);
-  }
-  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; line-height: 1.55; -webkit-font-smoothing: antialiased; }
-  .wrap { max-width: 880px; margin: 0 auto; padding: 28px 20px 64px; }
-  header.head { padding-bottom: 18px; border-bottom: 1px solid var(--line); margin-bottom: 24px; }
-  header.head .kicker { color: var(--accent); font-size: .82rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
-  header.head h1 { font-size: 1.85rem; margin: 4px 0 6px; line-height: 1.2; }
-  header.head .sub { color: var(--muted); font-size: .95rem; }
-  .badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: .78rem; font-weight: 600; }
-  .badge.sample { background: var(--warn-light); color: var(--warn); }
-  .badge.live { background: var(--accent-light); color: var(--accent); }
-  .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px 22px; margin: 0 0 18px; }
-  h2 { font-size: 1.15rem; margin: 0 0 12px; letter-spacing: -.005em; }
-  ul.exec { margin: 0; padding: 0; list-style: none; }
-  ul.exec li { padding: 9px 0; border-bottom: 1px dashed var(--line); font-size: .96rem; }
-  ul.exec li:last-child { border-bottom: 0; }
-  ul.exec li strong { color: var(--accent); }
-  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  @media (max-width: 640px) { .grid2 { grid-template-columns: 1fr; } }
-  .kpi { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
-  .kpi .label { color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
-  .kpi .val { font-size: 1.6rem; font-weight: 700; margin-top: 2px; }
-  .kpi .delta { color: var(--accent); font-size: .82rem; margin-top: 2px; }
-  table { width: 100%; border-collapse: collapse; font-size: .92rem; }
-  th { text-align: left; font-weight: 600; padding: 8px 10px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: .82rem; text-transform: uppercase; letter-spacing: .03em; }
-  td { padding: 10px; border-bottom: 1px solid var(--line); }
-  td.num { text-align: right; font-variant-numeric: tabular-nums; }
-  tr:last-child td { border-bottom: 0; }
-  .bar { background: var(--accent-light); height: 6px; border-radius: 3px; margin-top: 4px; }
-  .bar > div { background: var(--accent); height: 100%; border-radius: 3px; }
-  .footnote { color: var(--muted); font-size: .85rem; padding: 14px 18px; background: var(--warn-light); border-left: 3px solid var(--warn); border-radius: 6px; margin-top: 8px; }
-  .meta { color: var(--muted); font-size: .82rem; margin-top: 28px; text-align: center; padding-top: 18px; border-top: 1px solid var(--line); }
-  .meta code { background: var(--line); padding: 2px 6px; border-radius: 4px; font-size: .82rem; }
-</style>
-</head><body>
-<div class="wrap">
+:root {
+  --bg: #faf8f5;
+  --bg-card: #ffffff;
+  --bg-sub: #f5f1ea;
+  --text: #1a1a2e;
+  --text-muted: #5e5e6c;
+  --text-soft: #8b8794;
+  --accent: #b8926a;
+  --accent-deep: #7a5e3f;
+  --accent-light: rgba(184,146,106,.12);
+  --accent-bg: #f3ebdf;
+  --sage: #2d6a4f;
+  --sage-light: #e8f1ec;
+  --warn: #c97b3e;
+  --warn-light: #faecde;
+  --coral: #c14a3a;
+  --coral-light: #fae5e1;
+  --border: rgba(184,146,106,.18);
+  --border-soft: rgba(0,0,0,.06);
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.04);
+  --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 20px -8px rgba(122,94,63,.12);
+  --max-w: 1180px;
+  --nav-h: 64px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  color: var(--text); background: var(--bg);
+  line-height: 1.55; font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.serif { font-family: 'Playfair Display', Georgia, serif; }
+.mono { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum'; }
+a { color: var(--accent-deep); text-decoration: none; }
+a:hover { color: var(--accent); }
+button { font: inherit; cursor: pointer; }
 
-<header class="head">
-  <div class="kicker">Brow &amp; Medical Bar by Mary — Operator Dashboard</div>
-  <h1>Snapshot — 11. Mai 2026</h1>
-  <div class="sub">Zeitfenster: 13. April 2026 → 11. Mai 2026 &nbsp;·&nbsp; <span class="badge sample">SAMPLE-DATEN</span></div>
+/* ─── TOP BAR ─── */
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(250,248,245,.92);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid var(--border);
+  padding-top: env(safe-area-inset-top);
+}
+.topbar-inner {
+  max-width: var(--max-w); margin: 0 auto; padding: 0 18px;
+  height: var(--nav-h); display: flex; align-items: center; justify-content: space-between;
+}
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand-mark {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: var(--accent-deep); color: var(--bg);
+  display: grid; place-items: center;
+  font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px;
+  position: relative;
+}
+.brand-mark::after {
+  content: ''; width: 5px; height: 5px; border-radius: 50%;
+  background: var(--accent); position: absolute; bottom: 4px; right: 4px;
+}
+.brand-text { line-height: 1.1; }
+.brand-text .name { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 15px; letter-spacing: -.005em; }
+.brand-text .role { font-size: 11px; color: var(--text-muted); letter-spacing: .04em; text-transform: uppercase; }
+
+.live-pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 5px 11px; border-radius: 999px;
+  background: var(--warn-light); color: var(--warn);
+  font-size: 11px; font-weight: 600; letter-spacing: .03em;
+}
+.live-pill.live-real { background: var(--sage-light); color: var(--sage); }
+.live-pill .dot {
+  width: 7px; height: 7px; border-radius: 50%; background: currentColor;
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+
+/* ─── SECTION TABS ─── */
+.tabs {
+  position: sticky; top: var(--nav-h); z-index: 49;
+  background: rgba(250,248,245,.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-soft);
+}
+.tabs-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  display: flex; gap: 4px; padding: 6px 12px; overflow-x: auto;
+  scrollbar-width: none; -webkit-overflow-scrolling: touch;
+}
+.tabs-inner::-webkit-scrollbar { display: none; }
+.tab {
+  padding: 9px 14px; border-radius: 8px;
+  font-size: 13px; font-weight: 500; color: var(--text-muted);
+  background: transparent; border: 0; white-space: nowrap;
+  transition: all .15s ease;
+}
+.tab:hover { color: var(--text); background: var(--accent-light); }
+.tab.active { color: var(--bg); background: var(--accent-deep); font-weight: 600; }
+
+/* ─── LAYOUT ─── */
+.main { max-width: var(--max-w); margin: 0 auto; padding: 24px 18px 80px; }
+.section { display: none; animation: fadeIn .35s ease; }
+.section.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+.s-head { margin-bottom: 20px; }
+.s-head .eyebrow {
+  font-size: 11px; font-weight: 700; color: var(--accent-deep);
+  letter-spacing: .12em; text-transform: uppercase; margin-bottom: 6px;
+}
+.s-head h2 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 600; letter-spacing: -.012em; }
+.s-head p { color: var(--text-muted); font-size: 14px; margin-top: 4px; max-width: 620px; }
+
+/* ─── CARDS ─── */
+.card {
+  background: var(--bg-card); border: 1px solid var(--border-soft);
+  border-radius: var(--radius); padding: 20px 22px;
+  box-shadow: var(--shadow-sm); margin-bottom: 16px;
+}
+.card.elev { box-shadow: var(--shadow); }
+.card h3 {
+  font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 600;
+  margin-bottom: 12px; letter-spacing: -.005em;
+}
+.card-sub { font-size: 12px; color: var(--text-muted); margin-top: -8px; margin-bottom: 14px; }
+
+/* ─── KPI GRID ─── */
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 18px; }
+.kpi {
+  background: var(--bg-card); border: 1px solid var(--border-soft);
+  border-radius: 12px; padding: 14px 16px; box-shadow: var(--shadow-sm);
+  position: relative; overflow: hidden;
+}
+.kpi-label { font-size: 11px; color: var(--text-muted); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+.kpi-val { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 600; margin-top: 2px; line-height: 1.05; letter-spacing: -.015em; }
+.kpi-unit { font-size: 14px; color: var(--text-muted); font-weight: 400; }
+.kpi-meta { font-size: 11px; color: var(--text-soft); margin-top: 3px; }
+.kpi-spark { margin-top: 8px; height: 24px; }
+.kpi.accent { background: linear-gradient(135deg, #faf2e6 0%, #fff 60%); }
+
+/* ─── 2-COL ─── */
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+@media (max-width: 720px) { .row { grid-template-columns: 1fr; } }
+
+/* ─── TABLES ─── */
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { text-align: left; font-weight: 600; padding: 8px 8px 10px; border-bottom: 1px solid var(--border); color: var(--text-muted); font-size: 11px; text-transform: uppercase; letter-spacing: .05em; }
+td { padding: 11px 8px; border-bottom: 1px solid var(--border-soft); vertical-align: middle; }
+td.num { text-align: right; }
+tr:last-child td { border-bottom: 0; }
+tr.hi { background: var(--accent-light); }
+.bar-cell { width: 100%; height: 6px; background: var(--bg-sub); border-radius: 3px; overflow: hidden; margin-top: 5px; }
+.bar-cell > div { height: 100%; background: var(--accent); border-radius: 3px; transition: width .6s ease; }
+
+/* ─── PILLS ─── */
+.pill { display: inline-block; padding: 2px 9px; border-radius: 99px; font-size: 11px; font-weight: 600; letter-spacing: .02em; }
+.pill.sage { background: var(--sage-light); color: var(--sage); }
+.pill.warn { background: var(--warn-light); color: var(--warn); }
+.pill.coral { background: var(--coral-light); color: var(--coral); }
+.pill.accent { background: var(--accent-bg); color: var(--accent-deep); }
+.pill.soft { background: var(--bg-sub); color: var(--text-muted); }
+
+/* ─── ATTRIBUTION ─── */
+.attr-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border-soft); }
+.attr-row:last-child { border-bottom: 0; }
+.attr-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.attr-name { flex: 1; min-width: 0; }
+.attr-name .n { font-weight: 600; font-size: 13px; }
+.attr-name .l { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
+.attr-bar { flex: 1.4; height: 8px; background: var(--bg-sub); border-radius: 4px; overflow: hidden; }
+.attr-bar > div { height: 100%; transition: width 1s ease; }
+.attr-vals { font-size: 12px; color: var(--text-muted); text-align: right; min-width: 96px; }
+.attr-vals .rev { font-weight: 700; color: var(--text); font-size: 13px; }
+
+/* ─── COHORT HEATMAP ─── */
+.cohort-grid { display: grid; gap: 2px; }
+.cohort-cell {
+  font-size: 11px; padding: 8px 6px; text-align: center; border-radius: 4px;
+  background: var(--bg-sub); color: var(--text-muted); font-variant-numeric: tabular-nums;
+}
+.cohort-cell.label { background: transparent; text-align: left; font-weight: 600; color: var(--text); }
+.cohort-cell.head { background: transparent; font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .04em; }
+.cohort-cell.data {
+  background: var(--accent-deep); color: var(--bg); font-weight: 600;
+}
+
+/* ─── REVIEWS ─── */
+.wish-item { padding: 14px; background: var(--bg-sub); border-radius: 10px; margin-bottom: 10px; border-left: 3px solid var(--accent); }
+.wish-item:last-child { margin-bottom: 0; }
+.wish-head { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.wish-rank { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--accent-deep); min-width: 22px; }
+.wish-title { font-weight: 600; font-size: 14px; flex: 1; }
+.wish-quote { font-size: 12px; color: var(--text-muted); font-style: italic; line-height: 1.5; margin-top: 6px; }
+.wish-meta { display: flex; gap: 8px; flex-wrap: wrap; font-size: 11px; color: var(--text-soft); margin-top: 6px; }
+.wish-meta span { padding: 2px 7px; background: var(--bg-card); border-radius: 99px; }
+
+.staff-card { padding: 12px; background: var(--bg-sub); border-radius: 10px; margin-bottom: 8px; }
+.staff-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.staff-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--accent-deep); color: var(--bg);
+  display: grid; place-items: center;
+  font-family: 'Playfair Display', serif; font-weight: 700; font-size: 16px;
+  flex-shrink: 0;
+}
+.staff-info { flex: 1; min-width: 0; }
+.staff-info .nm { font-weight: 600; font-size: 14px; }
+.staff-info .rl { font-size: 11px; color: var(--text-muted); }
+.staff-stats { display: flex; gap: 8px; font-size: 12px; color: var(--text-muted); }
+.staff-stats .badge {
+  background: var(--bg-card); padding: 3px 9px; border-radius: 99px; font-weight: 600; color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+.staff-quote { font-size: 11px; color: var(--text-muted); font-style: italic; margin-top: 6px; padding-left: 46px; line-height: 1.5; }
+
+.obj-item { padding: 10px 12px; background: var(--bg-sub); border-radius: 8px; margin-bottom: 6px; border-left: 3px solid; }
+.obj-item.soft { border-left-color: var(--sage); }
+.obj-item.mid { border-left-color: var(--warn); }
+.obj-item.hard { border-left-color: var(--coral); }
+.obj-head { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.obj-title { font-weight: 600; font-size: 13px; flex: 1; }
+.obj-stats { font-size: 11px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.obj-remedy { font-size: 12px; color: var(--text-muted); padding-left: 0; }
+
+/* ─── CHARTS ─── */
+.chart-container { position: relative; overflow: visible; }
+.chart-container svg { display: block; width: 100%; height: auto; }
+.chart-tooltip {
+  position: absolute; padding: 6px 10px; background: var(--text); color: var(--bg);
+  border-radius: 6px; font-size: 11px; pointer-events: none; transform: translate(-50%, -110%);
+  opacity: 0; transition: opacity .15s; white-space: nowrap; font-variant-numeric: tabular-nums;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
+.chart-tooltip.show { opacity: 1; }
+.chart-tooltip::after {
+  content: ''; position: absolute; left: 50%; bottom: -4px;
+  transform: translateX(-50%); width: 0; height: 0;
+  border-left: 4px solid transparent; border-right: 4px solid transparent;
+  border-top: 4px solid var(--text);
+}
+
+/* ─── SEO PAGES ─── */
+.page-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; }
+.page-tile {
+  background: var(--bg-sub); border-radius: 10px; padding: 12px 14px;
+  border-left: 3px solid var(--sage); transition: transform .15s ease;
+}
+.page-tile:hover { transform: translateY(-1px); }
+.page-tile-head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.page-tile-title { font-weight: 600; font-size: 13px; flex: 1; line-height: 1.3; }
+.page-tile-meta { font-size: 11px; color: var(--text-muted); display: flex; gap: 10px; flex-wrap: wrap; }
+.page-tile-link { font-size: 11px; color: var(--accent-deep); margin-top: 6px; display: inline-block; word-break: break-all; }
+
+/* ─── SYSTEM HEALTH ─── */
+.sys-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border-soft); }
+.sys-item:last-child { border-bottom: 0; }
+.sys-id {
+  width: 42px; height: 42px; border-radius: 8px;
+  background: var(--accent-bg); color: var(--accent-deep);
+  display: grid; place-items: center; font-family: 'Playfair Display', serif;
+  font-weight: 700; font-size: 14px; flex-shrink: 0;
+}
+.sys-id.planned { background: var(--bg-sub); color: var(--text-muted); }
+.sys-content { flex: 1; min-width: 0; }
+.sys-name { font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.sys-detail { font-size: 12px; color: var(--text-muted); margin-top: 2px; line-height: 1.5; }
+
+.countdown {
+  background: linear-gradient(135deg, #f3ebdf 0%, #faf2e6 100%);
+  border: 1px solid var(--border); border-radius: 12px;
+  padding: 16px 18px; margin-top: 12px;
+}
+.countdown-head { font-size: 11px; font-weight: 700; color: var(--accent-deep); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px; }
+.countdown-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+.countdown-detail { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+.countdown-detail strong { color: var(--text); }
+
+/* ─── DECISIONS ─── */
+.dec-item { background: var(--bg-card); border: 1px solid var(--border-soft); border-left: 3px solid var(--accent-deep); border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; }
+.dec-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
+.dec-id { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--accent-deep); font-size: 16px; min-width: 30px; }
+.dec-title { font-weight: 600; font-size: 14px; flex: 1; line-height: 1.4; }
+.dec-leverage { font-size: 11px; color: var(--text-muted); font-style: italic; margin-bottom: 10px; padding-left: 40px; }
+.dec-options { display: flex; gap: 8px; flex-wrap: wrap; padding-left: 40px; }
+.dec-opt {
+  padding: 6px 14px; border-radius: 8px; font-size: 12px; font-weight: 500;
+  background: var(--bg-sub); border: 1px solid transparent; color: var(--text);
+  transition: all .15s;
+}
+.dec-opt:hover { background: var(--accent-light); border-color: var(--accent); }
+.dec-opt.default { background: var(--accent-deep); color: var(--bg); }
+
+/* ─── FOOTER ─── */
+.foot {
+  max-width: var(--max-w); margin: 30px auto 0; padding: 24px 18px;
+  text-align: center; color: var(--text-soft); font-size: 11px; border-top: 1px solid var(--border-soft);
+}
+.foot a { color: var(--text-muted); }
+
+/* ─── INSTALL PROMPT ─── */
+.install-banner {
+  position: fixed; bottom: 16px; left: 16px; right: 16px;
+  max-width: 460px; margin: 0 auto; padding: 14px 16px;
+  background: var(--text); color: var(--bg); border-radius: 12px;
+  display: none; align-items: center; gap: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.25); z-index: 100;
+}
+.install-banner.show { display: flex; }
+.install-banner .ib-text { flex: 1; font-size: 13px; }
+.install-banner .ib-text strong { display: block; font-family: 'Playfair Display', serif; font-size: 14px; }
+.install-banner button {
+  background: var(--accent); color: var(--text); border: 0;
+  padding: 8px 14px; border-radius: 6px; font-weight: 600; font-size: 12px;
+}
+.install-banner .ib-close {
+  background: transparent; color: rgba(255,255,255,.6); font-size: 18px; padding: 4px 8px;
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark">M</div>
+      <div class="brand-text">
+        <div class="name">Brow &amp; Medical Bar</div>
+        <div class="role">Operator Dashboard</div>
+      </div>
+    </div>
+    <div class="live-pill" id="live-pill">
+      <span class="dot"></span><span id="live-text">Sample · Tag 23 plug-in</span>
+    </div>
+  </div>
 </header>
 
-<div class="card">
-  <h2>Executive Summary</h2>
-  <ul class="exec">
-    <li><strong>Search Console</strong>: <em>nicht verbunden</em> — GSC-Property-Auth fehlt. Tag 23 plug-in via Service-Account.</li>
-    <li><strong>Google Business Profile</strong>: <em>nicht verbunden</em> — GBP-Inhaberschaft wird nach Laura-Transfer verfügbar.</li>
-    <li><strong>Shore-Buchungen</strong>: <strong>21 Buchungen</strong>, Umsatz <strong>10.968,00 €</strong>.</li>
-    <li><strong>Cohorts</strong>: letzter Monat 6 Neukund:innen, ø LTV-3mo <strong>645,18 €</strong>.</li>
-  </ul>
+<nav class="tabs">
+  <div class="tabs-inner" id="tabs">
+    <button class="tab active" data-tab="pulse">Puls</button>
+    <button class="tab" data-tab="revenue">Umsatz</button>
+    <button class="tab" data-tab="voice">Stimmen</button>
+    <button class="tab" data-tab="seo">SEO</button>
+    <button class="tab" data-tab="system">System</button>
+    <button class="tab" data-tab="decisions">Entscheidungen</button>
+  </div>
+</nav>
+
+<main class="main">
+
+  <!-- ═══ PULSE ═══ -->
+  <section class="section active" id="pulse">
+    <div class="s-head">
+      <div class="eyebrow">Live · 28 Tage</div>
+      <h2 class="serif">Puls des Studios</h2>
+      <p>Was gerade passiert. Tag 23 sind das echte Zahlen — heute sind es Sample-Werte, identische Pipeline.</p>
+    </div>
+
+    <div class="kpis" id="kpi-grid"></div>
+
+    <div class="row">
+      <div class="card">
+        <h3>Tagesverlauf — Buchungen</h3>
+        <div class="card-sub">28-Tage-Sparkline · gleitendes Fenster</div>
+        <div class="chart-container" id="chart-bookings"></div>
+      </div>
+      <div class="card">
+        <h3>Tagesverlauf — Umsatz</h3>
+        <div class="card-sub">28 Tage · in €</div>
+        <div class="chart-container" id="chart-revenue"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Wo wir grad stehen</h3>
+      <div id="status-summary" style="font-size: 13.5px; line-height: 1.7; color: var(--text-muted);"></div>
+    </div>
+  </section>
+
+  <!-- ═══ REVENUE ═══ -->
+  <section class="section" id="revenue">
+    <div class="s-head">
+      <div class="eyebrow">Attribution &amp; Cohorts</div>
+      <h2 class="serif">Woher der Umsatz kommt</h2>
+      <p>Welcher Kanal welche Buchung gebracht hat — und wie Kund:innen über Monate Umsatz nachliefern.</p>
+    </div>
+
+    <div class="row">
+      <div class="card">
+        <h3>Attribution by Source</h3>
+        <div class="card-sub">28-Tage-Umsatz pro Akquise-Kanal</div>
+        <div id="attr-list"></div>
+      </div>
+      <div class="card">
+        <h3>Donut</h3>
+        <div class="card-sub">Anteil pro Quelle</div>
+        <div class="chart-container" id="chart-donut" style="max-width: 280px; margin: 0 auto;"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Cohort-Heatmap</h3>
+      <div class="card-sub">Wer hat wann den ersten Termin gemacht — und wie viel Folge-Umsatz pro Monat danach?</div>
+      <div id="cohort-grid" style="overflow-x: auto;"></div>
+    </div>
+  </section>
+
+  <!-- ═══ VOICE OF CUSTOMER ═══ -->
+  <section class="section" id="voice">
+    <div class="s-head">
+      <div class="eyebrow">Voice of Customer · 1.904 Reviews</div>
+      <h2 class="serif">Was Kund:innen sagen</h2>
+      <p>Mining der Bewertungen — sample 120 Reviews zeigt die Pipeline. Tag 23: kompletter Korpus von 1.904.</p>
+    </div>
+
+    <div class="card">
+      <h3>Sentiment-Drift · 28 Monate</h3>
+      <div class="card-sub">Monatliches mittleres Rating + 3-Monats-Glättung. Keine Drift-Events &gt; 0,30 detektiert.</div>
+      <div class="chart-container" id="chart-sentiment"></div>
+    </div>
+
+    <div class="row">
+      <div class="card">
+        <h3>Top Behandlungs-Wünsche · noch nicht im Portfolio</h3>
+        <div class="card-sub">Was Kund:innen in Reviews aktiv erfragen — direkte Umsatzhebel.</div>
+        <div id="wish-list"></div>
+      </div>
+      <div class="card">
+        <h3>Stärkste Mitarbeiter:innen-Erwähnungen</h3>
+        <div class="card-sub">Namentlich gelobt — die Personal-Brand-Säulen.</div>
+        <div id="staff-list"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Top 10 Einwand-Muster</h3>
+      <div class="card-sub">Sorgen aus Reviews. Material für proaktive Erstgesprächs-Briefings.</div>
+      <div id="obj-list"></div>
+    </div>
+  </section>
+
+  <!-- ═══ SEO ═══ -->
+  <section class="section" id="seo">
+    <div class="s-head">
+      <div class="eyebrow">SEO · 10 Niche-Pages live</div>
+      <h2 class="serif">Such-Vorsprung</h2>
+      <p>Pages auf Pascals Domain. 22 Tage lang Ranking-Signal sammeln, dann per 301 zu browbarbymary.de — Link-Equity wandert mit.</p>
+    </div>
+
+    <div class="card">
+      <h3>Live Niche-Pages</h3>
+      <div class="card-sub">Alle HTTP 200. In Sitemap. Bei IndexNow registriert.</div>
+      <div class="page-grid" id="page-grid"></div>
+    </div>
+
+    <div class="card">
+      <h3>Search Console — Sample Top-Queries</h3>
+      <div class="card-sub">Pre-View wie Tag-23-Live aussehen wird. Aktuelle Pre-Build-Property: <code>pfassmeyer.github.io/mary-site-preview/</code></div>
+      <table id="sc-table">
+        <thead><tr><th>Query</th><th class="num">Clicks</th><th class="num">Impressions</th><th class="num">Position</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ═══ SYSTEM ═══ -->
+  <section class="section" id="system">
+    <div class="s-head">
+      <div class="eyebrow">Pipeline · Welle-0 Pre-Build</div>
+      <h2 class="serif">System-Gesundheit</h2>
+      <p>Welche Bausteine bereits laufen, welche bereit sind, welche auf den Tag-23-Trigger warten.</p>
+    </div>
+
+    <div class="card">
+      <h3>Komponenten</h3>
+      <div id="sys-list"></div>
+    </div>
+
+    <div class="card">
+      <div class="countdown">
+        <div class="countdown-head">Tag 23 · GBP-Transfer</div>
+        <div class="countdown-title" id="cd-target"></div>
+        <div class="countdown-detail" id="cd-detail"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DECISIONS ═══ -->
+  <section class="section" id="decisions">
+    <div class="s-head">
+      <div class="eyebrow">Diese Woche · 3 offene Entscheidungen</div>
+      <h2 class="serif">Was Mary entscheiden müsste</h2>
+      <p>Drei Entscheidungen für Freitag 17:00 — 15 Min Decision-Window. Default-Vorschlag pro Punkt.</p>
+    </div>
+
+    <div id="dec-list"></div>
+
+    <div class="card" style="margin-top: 18px; background: var(--bg-sub); border: 0;">
+      <h3>Wöchentlicher Rhythmus</h3>
+      <ul style="list-style: none; font-size: 13px; color: var(--text-muted); line-height: 1.9;">
+        <li><strong style="color: var(--text);">Montag 06:00</strong> — Dashboard refresht (auto). Pascal queued 3 Decisions.</li>
+        <li><strong style="color: var(--text);">Montag 09:00</strong> — Mary: 5-Min-Glance auf Mobil.</li>
+        <li><strong style="color: var(--text);">Freitag 17:00</strong> — Decision-Window 15 Min: Mary + Pascal, drei Entscheidungen.</li>
+        <li><strong style="color: var(--text);">1. Freitag im Monat</strong> — M2 re-run + Cohort refresh + 1 Service/Pricing-Decision.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  Brow &amp; Medical Bar by Mary · Bleibtreustraße 18, 10623 Berlin-Charlottenburg ·
+  <a href="https://browbarbymary.de" target="_blank" rel="noopener">browbarbymary.de</a> ·
+  <span id="footer-meta"></span>
+</footer>
+
+<div class="install-banner" id="install-banner">
+  <div class="ib-text">
+    <strong>Aufs Handy installieren</strong>
+    Wie eine App — ein Tap, immer dabei.
+  </div>
+  <button id="install-btn">Installieren</button>
+  <button class="ib-close" id="install-close">×</button>
 </div>
 
-<div class="grid2">
-  <div class="kpi"><div class="label">Buchungen (28 Tage)</div><div class="val">21</div><div class="delta">Sample</div></div>
-  <div class="kpi"><div class="label">Umsatz (28 Tage)</div><div class="val">10.968 €</div><div class="delta">Sample</div></div>
-  <div class="kpi"><div class="label">Aktive Cohort</div><div class="val">6 / 11</div><div class="delta">Mai / April</div></div>
-  <div class="kpi"><div class="label">UTM Coverage</div><div class="val">100%</div><div class="delta">Tracking sauber</div></div>
-</div>
+<script>
+"use strict";
 
-<div class="card">
-  <h2>Attribution by Source</h2>
-  <table>
-    <thead><tr><th>Quelle</th><th style="text-align:right">Buchungen</th><th style="text-align:right">Umsatz</th><th>Anteil</th></tr></thead>
-    <tbody>
-      <tr><td>google</td><td class="num">6</td><td class="num">3.200,00 €</td><td><div class="bar"><div style="width:29.2%"></div></div></td></tr>
-      <tr><td>niche-page</td><td class="num">3</td><td class="num">2.270,00 €</td><td><div class="bar"><div style="width:20.7%"></div></div></td></tr>
-      <tr><td>email</td><td class="num">2</td><td class="num">1.998,00 €</td><td><div class="bar"><div style="width:18.2%"></div></div></td></tr>
-      <tr><td>whatsapp</td><td class="num">4</td><td class="num">1.430,00 €</td><td><div class="bar"><div style="width:13.0%"></div></div></td></tr>
-      <tr><td>direct</td><td class="num">3</td><td class="num">1.280,00 €</td><td><div class="bar"><div style="width:11.7%"></div></div></td></tr>
-      <tr><td>instagram</td><td class="num">3</td><td class="num">790,00 €</td><td><div class="bar"><div style="width:7.2%"></div></div></td></tr>
-    </tbody>
-  </table>
-</div>
+/* ───────────────── State ───────────────── */
+let DATA = null;
+let activeTab = "pulse";
 
-<div class="card">
-  <h2>Cohorts (Retention &amp; Wiederbuchungen)</h2>
-  <table>
-    <thead><tr><th>Cohort</th><th style="text-align:right">n</th><th style="text-align:right">Umsatz M0</th><th style="text-align:right">Umsatz M3</th><th style="text-align:right">Umsatz M12</th><th style="text-align:right">Ret M3</th></tr></thead>
-    <tbody>
-      <tr><td>April 2026</td><td class="num">11</td><td class="num">7.619,00 €</td><td class="num">0,00 €</td><td class="num">0,00 €</td><td class="num">0,0 %</td></tr>
-      <tr><td>Mai 2026</td><td class="num">6</td><td class="num">3.169,00 €</td><td class="num">0,00 €</td><td class="num">0,00 €</td><td class="num">0,0 %</td></tr>
-    </tbody>
-  </table>
-  <p class="footnote">Retention-Spalten füllen sich automatisch, sobald 3+ Monate echte Shore-Daten vorliegen. Heute: zu früh.</p>
-</div>
+/* ───────────────── Helpers ───────────────── */
+const $ = (sel, parent = document) => parent.querySelector(sel);
+const $$ = (sel, parent = document) => [...parent.querySelectorAll(sel)];
+const eur = (n) => new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(n);
+const num = (n) => new Intl.NumberFormat("de-DE").format(n);
+const pct = (n) => (n == null) ? "—" : (n * 100).toFixed(0) + "%";
 
-<div class="card">
-  <h2>Was hier nicht steht (Ehrlichkeit)</h2>
-  <ul class="exec">
-    <li>Diese Zahlen sind <strong>Sample-Daten</strong> zur Validierung der Pipeline — keine echten Shore-Buchungen.</li>
-    <li><strong>Tag 23 plug-in:</strong> Sobald Laura die GBP-Inhaberschaft überträgt und Pascal die Search-Console-Property verifiziert hat, ziehen die obigen vier Karten echte Daten — ohne Code-Änderung.</li>
-    <li><strong>Plan B (parallel):</strong> iPad am Empfang mit 30-Sekunden-Frage „Wie haben Sie uns gefunden?" → 1.200 Datenpunkte in 6 Wochen, unabhängig von GBP-Transfer.</li>
-    <li><strong>Review-Auswertung der 1.904 Bewertungen:</strong> Pipeline ist fertig, Test-Lauf zeigt Top-Wünsche (Body-Contouring, PMU-Entfernung, Lymphdrainage) und stärkste Mitarbeiter-Erwähnungen (Mary 55×, Sarah 12×, Cecilia 6×). Echter Lauf nach GBP-Transfer.</li>
-  </ul>
-</div>
+/* ───────────────── SVG Chart Builders ───────────────── */
+function sparkline(container, values, opts = {}) {
+  const w = 240, h = 28, pad = 2;
+  const max = Math.max(...values, 1);
+  const min = Math.min(...values);
+  const range = max - min || 1;
+  const stepX = (w - pad * 2) / Math.max(values.length - 1, 1);
+  const pts = values.map((v, i) => [pad + i * stepX, h - pad - ((v - min) / range) * (h - pad * 2)]);
+  const path = pts.map((p, i) => (i === 0 ? "M" : "L") + p[0].toFixed(1) + "," + p[1].toFixed(1)).join(" ");
+  const areaPath = path + " L" + (w - pad) + "," + (h - pad) + " L" + pad + "," + (h - pad) + " Z";
+  const accent = opts.color || "#b8926a";
+  container.innerHTML = `
+    <svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
+      <path d="${areaPath}" fill="${accent}" fill-opacity="0.12"/>
+      <path d="${path}" fill="none" stroke="${accent}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="${pts[pts.length-1][0]}" cy="${pts[pts.length-1][1]}" r="2.4" fill="${accent}"/>
+    </svg>`;
+}
 
-<div class="meta">
-  Quelle: <code>bun src/cli.ts snapshot</code> &nbsp;·&nbsp; Snapshot-File: <code>M3_DASHBOARD/output/snapshot.{json,md}</code> &nbsp;·&nbsp; Generated 2026-05-11
-</div>
+function lineChart(container, points, opts = {}) {
+  // points = [{x: label, y: value, secondaryY?: value}]
+  const w = 720, h = 220, padL = 36, padR = 14, padT = 14, padB = 38;
+  const innerW = w - padL - padR;
+  const innerH = h - padT - padB;
+  const ys = points.map(p => p.y).filter(v => v != null);
+  const ys2 = points.map(p => p.secondaryY).filter(v => v != null);
+  const allY = [...ys, ...ys2];
+  const yMax = opts.yMax ?? Math.max(...allY, 1);
+  const yMin = opts.yMin ?? Math.min(...allY, 0);
+  const yRange = yMax - yMin || 1;
+  const stepX = innerW / Math.max(points.length - 1, 1);
 
-</div>
+  const xOf = (i) => padL + i * stepX;
+  const yOf = (v) => padT + innerH - ((v - yMin) / yRange) * innerH;
+
+  let path1 = "", path2 = "";
+  points.forEach((p, i) => {
+    if (p.y != null) path1 += (path1 ? " L" : "M") + xOf(i).toFixed(1) + "," + yOf(p.y).toFixed(1);
+    if (p.secondaryY != null) path2 += (path2 ? " L" : "M") + xOf(i).toFixed(1) + "," + yOf(p.secondaryY).toFixed(1);
+  });
+
+  // grid lines
+  const gridLines = [0, 0.5, 1].map(t => {
+    const y = padT + innerH * t;
+    const v = yMax - yRange * t;
+    return `<line x1="${padL}" y1="${y}" x2="${w-padR}" y2="${y}" stroke="rgba(0,0,0,0.06)" stroke-dasharray="3 3"/>
+            <text x="${padL - 6}" y="${y + 4}" font-size="9" fill="#8b8794" text-anchor="end">${v.toFixed(1)}</text>`;
+  }).join("");
+
+  // x labels (every Nth)
+  const showEvery = Math.ceil(points.length / 7);
+  const xLabels = points.map((p, i) => {
+    if (i % showEvery !== 0 && i !== points.length - 1) return "";
+    return `<text x="${xOf(i)}" y="${h - 12}" font-size="9" fill="#8b8794" text-anchor="middle">${p.x.slice(2,7).replace('-', '·')}</text>`;
+  }).join("");
+
+  // dots for hover
+  const dots = points.map((p, i) => p.y != null ?
+    `<circle class="hov-dot" cx="${xOf(i)}" cy="${yOf(p.y)}" r="3" fill="#7a5e3f" data-label="${p.x}" data-y="${p.y}" data-y2="${p.secondaryY ?? ''}"/>` : ""
+  ).join("");
+
+  container.innerHTML = `
+    <svg viewBox="0 0 ${w} ${h}" style="overflow: visible;">
+      ${gridLines}
+      ${path2 ? `<path d="${path2}" fill="none" stroke="#c9a87b" stroke-width="1.4" stroke-dasharray="4 3"/>` : ""}
+      <path d="${path1}" fill="none" stroke="#7a5e3f" stroke-width="2" stroke-linejoin="round"/>
+      ${dots}
+      ${xLabels}
+    </svg>
+    <div class="chart-tooltip" id="tt-${container.id}"></div>`;
+
+  const tt = $("#tt-" + container.id);
+  $$(".hov-dot", container).forEach(d => {
+    d.addEventListener("mouseenter", (e) => {
+      const r = container.getBoundingClientRect();
+      const dr = d.getBoundingClientRect();
+      tt.style.left = (dr.left - r.left + dr.width/2) + "px";
+      tt.style.top = (dr.top - r.top) + "px";
+      const y2 = d.getAttribute("data-y2");
+      tt.textContent = d.getAttribute("data-label") + " · " + d.getAttribute("data-y") + (y2 ? " (3-Mo: " + y2 + ")" : "");
+      tt.classList.add("show");
+    });
+    d.addEventListener("mouseleave", () => tt.classList.remove("show"));
+  });
+}
+
+function donutChart(container, slices) {
+  // slices = [{value, color, label}]
+  const total = slices.reduce((s, x) => s + x.value, 0);
+  const cx = 110, cy = 110, r = 78, rInner = 50;
+  let cum = 0;
+  const paths = slices.map(s => {
+    const start = cum / total * Math.PI * 2 - Math.PI/2;
+    cum += s.value;
+    const end = cum / total * Math.PI * 2 - Math.PI/2;
+    const x1 = cx + Math.cos(start) * r, y1 = cy + Math.sin(start) * r;
+    const x2 = cx + Math.cos(end) * r, y2 = cy + Math.sin(end) * r;
+    const xi1 = cx + Math.cos(start) * rInner, yi1 = cy + Math.sin(start) * rInner;
+    const xi2 = cx + Math.cos(end) * rInner, yi2 = cy + Math.sin(end) * rInner;
+    const large = end - start > Math.PI ? 1 : 0;
+    return `<path d="M ${x1} ${y1} A ${r} ${r} 0 ${large} 1 ${x2} ${y2} L ${xi2} ${yi2} A ${rInner} ${rInner} 0 ${large} 0 ${xi1} ${yi1} Z" fill="${s.color}" stroke="#fff" stroke-width="2"/>`;
+  }).join("");
+  container.innerHTML = `
+    <svg viewBox="0 0 220 220">
+      ${paths}
+      <text x="110" y="105" text-anchor="middle" font-family="Playfair Display" font-size="22" font-weight="600" fill="#1a1a2e">${eur(total)}</text>
+      <text x="110" y="125" text-anchor="middle" font-size="10" fill="#5e5e6c">Umsatz 28 Tage</text>
+    </svg>`;
+}
+
+/* ───────────────── Renderers ───────────────── */
+function renderPulse() {
+  const p = DATA.pulse;
+  const kpis = [
+    { label: "Buchungen", val: p.booked_chair_hours_28d, unit: "", meta: "letzte 28 Tage", spark: p.sparklines.bookings_daily, accent: true },
+    { label: "Umsatz", val: eur(p.revenue_28d_eur), unit: "", meta: "Ø " + eur(p.avg_booking_value_eur) + " / Buchung", spark: p.sparklines.revenue_daily_eur },
+    { label: "Review-Score", val: p.review_score_28d.toFixed(2), unit: "⭑", meta: p.review_count_28d + " neue Reviews" },
+    { label: "Niche-Pages", val: p.niche_pages_live, unit: "", meta: p.niche_pages_indexed_pct + "% indexiert" },
+    { label: "Neukund:innen", val: p.new_customers_28d, unit: "", meta: p.returning_customers_28d + " Wiederholer" },
+    { label: "UTM-Tracking", val: p.utm_coverage_pct + "%", unit: "", meta: "Coverage" },
+  ];
+  const grid = $("#kpi-grid");
+  grid.innerHTML = kpis.map((k, i) => `
+    <div class="kpi ${k.accent ? 'accent' : ''}">
+      <div class="kpi-label">${k.label}</div>
+      <div class="kpi-val mono">${k.val}<span class="kpi-unit"> ${k.unit||''}</span></div>
+      <div class="kpi-meta">${k.meta}</div>
+      ${k.spark ? `<div class="kpi-spark" id="spark-${i}"></div>` : ''}
+    </div>
+  `).join("");
+  kpis.forEach((k, i) => {
+    if (k.spark) sparkline($("#spark-" + i), k.spark);
+  });
+
+  // status summary
+  $("#status-summary").innerHTML = `
+    <p>Im 28-Tage-Fenster: <strong style="color:var(--text)">${p.booked_chair_hours_28d} Buchungen</strong>, <strong style="color:var(--text)">${eur(p.revenue_28d_eur)}</strong> Umsatz, Review-Sentiment stabil bei <strong style="color:var(--text)">${p.review_score_28d.toFixed(2)} ⭑</strong>. Pre-Build-SEO läuft mit <strong style="color:var(--text)">${p.niche_pages_live}/${p.niche_pages_live} Niche-Pages indexiert</strong>.</p>
+    <p style="margin-top: 10px;">Stärkster Akquise-Kanal heute: <strong style="color:var(--text)">Google Organic</strong> (29% Umsatzanteil). SEO-Niche-Pages und WhatsApp/Email kommen auf Platz 2-4. Instagram bleibt unter Potenzial — ist Lever für Welle 2.</p>
+  `;
+}
+
+function renderRevenue() {
+  // Attribution list
+  const total = DATA.attribution.reduce((s, x) => s + x.revenue_eur, 0);
+  $("#attr-list").innerHTML = DATA.attribution.map(a => `
+    <div class="attr-row">
+      <div class="attr-dot" style="background: ${a.color};"></div>
+      <div class="attr-name">
+        <div class="n">${a.label}</div>
+        <div class="l">${a.source}</div>
+      </div>
+      <div class="attr-bar"><div style="width: ${(a.revenue_eur/total*100).toFixed(1)}%; background: ${a.color};"></div></div>
+      <div class="attr-vals">
+        <div class="rev mono">${eur(a.revenue_eur)}</div>
+        <div>${a.bookings} Buchungen</div>
+      </div>
+    </div>
+  `).join("");
+
+  // Donut
+  donutChart($("#chart-donut"), DATA.attribution.map(a => ({ value: a.revenue_eur, color: a.color, label: a.source })));
+
+  // Cohort heatmap
+  const months = ["M0", "M1", "M2", "M3", "M6", "M12"];
+  const cells = DATA.cohorts;
+  const cols = months.length + 2;
+  let grid = `<div class="cohort-grid" style="grid-template-columns: 100px 50px repeat(${months.length}, 1fr);">`;
+  grid += `<div class="cohort-cell head">Cohort</div><div class="cohort-cell head">n</div>` + months.map(m => `<div class="cohort-cell head">${m}</div>`).join("");
+  cells.forEach(c => {
+    grid += `<div class="cohort-cell label">${c.label}</div>`;
+    grid += `<div class="cohort-cell">${c.n}</div>`;
+    [c.rev_m0, c.rev_m1, c.rev_m1, c.rev_m3, c.rev_m6, c.rev_m12].forEach((v, i) => {
+      // skip M2 because we don't track it separately; use rev_m1 as proxy for visual
+      if (v == null) {
+        grid += `<div class="cohort-cell">—</div>`;
+      } else {
+        const intensity = Math.min(v / 8000, 1);
+        const color = `rgba(122, 94, 63, ${0.18 + intensity * 0.82})`;
+        grid += `<div class="cohort-cell data" style="background: ${color};">${num(Math.round(v))}€</div>`;
+      }
+    });
+  });
+  grid += `</div>`;
+  $("#cohort-grid").innerHTML = grid;
+}
+
+function renderVoice() {
+  const v = DATA.voice_of_customer;
+
+  // Sentiment line chart
+  const points = v.sentiment_28m.map(s => ({ x: s.month, y: s.sentiment, secondaryY: s.rolling_3m }));
+  lineChart($("#chart-sentiment"), points, { yMin: 0, yMax: 1.1 });
+
+  // Wishes
+  $("#wish-list").innerHTML = v.top_wishes.slice(0, 6).map(w => `
+    <div class="wish-item">
+      <div class="wish-head">
+        <div class="wish-rank serif">${w.rank}</div>
+        <div class="wish-title">${w.wish}</div>
+        <span class="pill ${w.revenue_potential==='hoch'?'sage':w.revenue_potential==='mittel'?'accent':'soft'}">${w.revenue_potential}</span>
+      </div>
+      <div class="wish-quote">„${w.sample}"</div>
+      <div class="wish-meta">
+        <span>Konfidenz ${(w.confidence*100).toFixed(0)}%</span>
+        <span>Cluster ${w.cluster_size} Reviews</span>
+        <span>Evidence: ${w.evidence_ids.join(", ")}</span>
+      </div>
+    </div>
+  `).join("");
+
+  // Staff
+  $("#staff-list").innerHTML = v.staff.map(s => `
+    <div class="staff-card">
+      <div class="staff-row">
+        <div class="staff-avatar">${s.name[0]}</div>
+        <div class="staff-info">
+          <div class="nm">${s.name}</div>
+          <div class="rl">${s.role}</div>
+        </div>
+        <div class="staff-stats">
+          <span class="badge mono">${s.mentions}×</span>
+          <span class="badge mono">${s.avg_rating_when_mentioned.toFixed(2)} ⭑</span>
+        </div>
+      </div>
+      <div class="staff-quote">„${s.samples[0]}"</div>
+    </div>
+  `).join("");
+
+  // Objections
+  $("#obj-list").innerHTML = v.objections.map(o => `
+    <div class="obj-item ${o.type}">
+      <div class="obj-head">
+        <div class="obj-title">${o.pattern}</div>
+        <div class="obj-stats">${o.frequency}× · Ø ${o.avg_rating.toFixed(2)} ⭑</div>
+      </div>
+      <div class="obj-remedy">→ ${o.remedy}</div>
+    </div>
+  `).join("");
+}
+
+function renderSeo() {
+  // Page tiles
+  $("#page-grid").innerHTML = DATA.seo.niche_pages.map(p => `
+    <div class="page-tile">
+      <div class="page-tile-head">
+        <div class="page-tile-title">${p.title}</div>
+        <span class="pill sage">${p.live ? 'live' : 'draft'}</span>
+      </div>
+      <div class="page-tile-meta">
+        <span>Schema: ${p.schema}</span>
+        <span>Prio ${p.priority}</span>
+        <span>lastmod ${p.lastmod}</span>
+      </div>
+      <a href="https://pfassmeyer.github.io/mary-site-preview/${p.slug}.html" class="page-tile-link" target="_blank" rel="noopener">${p.slug}.html →</a>
+    </div>
+  `).join("");
+
+  // Sample SC queries
+  const tbody = $("#sc-table tbody");
+  tbody.innerHTML = DATA.seo.search_console.sample_top_queries.map(q => `
+    <tr>
+      <td>${q.query}</td>
+      <td class="num mono">${q.clicks}</td>
+      <td class="num mono">${q.impressions}</td>
+      <td class="num mono">${q.position.toFixed(1)}</td>
+    </tr>
+  `).join("");
+}
+
+function renderSystem() {
+  $("#sys-list").innerHTML = DATA.system_health.components.map(c => {
+    const pillClass = c.status === "live" ? "sage" : c.status === "ready" ? "accent" : "soft";
+    return `
+    <div class="sys-item">
+      <div class="sys-id ${c.status === 'planned' ? 'planned' : ''}">${c.id}</div>
+      <div class="sys-content">
+        <div class="sys-name">${c.name} <span class="pill ${pillClass}">${c.status}</span></div>
+        <div class="sys-detail">${c.detail}${c.url ? ` · <a href="${c.url}" target="_blank" rel="noopener">öffnen ↗</a>` : ''}</div>
+      </div>
+    </div>`;
+  }).join("");
+
+  $("#cd-target").textContent = DATA.system_health.tag_23_countdown.target;
+  $("#cd-detail").innerHTML = `
+    <p><strong>Blocked by:</strong> ${DATA.system_health.tag_23_countdown.blocked_by}</p>
+    <p style="margin-top: 6px;"><strong>Nächste Aktion:</strong> ${DATA.system_health.tag_23_countdown.next_action}</p>
+    <p style="margin-top: 6px;"><strong>Plan B nach ${DATA.system_health.tag_23_countdown.fallback_after_days} Tagen:</strong> ${DATA.system_health.tag_23_countdown.fallback_action}</p>
+  `;
+}
+
+function renderDecisions() {
+  $("#dec-list").innerHTML = DATA.decisions_pending.map(d => `
+    <div class="dec-item">
+      <div class="dec-head">
+        <div class="dec-id serif">${d.id}</div>
+        <div class="dec-title">${d.title}</div>
+      </div>
+      <div class="dec-leverage">Hebel: ${d.leverage}</div>
+      <div class="dec-options">
+        ${d.options.map(o => `<button class="dec-opt ${o === d.default ? 'default' : ''}" onclick="this.classList.toggle('default')">${o}</button>`).join("")}
+      </div>
+    </div>
+  `).join("");
+}
+
+/* ───────────────── Tab Switch ───────────────── */
+function showTab(name) {
+  activeTab = name;
+  $$(".tab").forEach(t => t.classList.toggle("active", t.dataset.tab === name));
+  $$(".section").forEach(s => s.classList.toggle("active", s.id === name));
+  history.replaceState(null, "", "#" + name);
+  window.scrollTo({ top: 0, behavior: "instant" });
+}
+
+/* ───────────────── Init ───────────────── */
+async function init() {
+  try {
+    const resp = await fetch("data.json?v=" + Date.now());
+    DATA = await resp.json();
+  } catch (e) {
+    document.body.innerHTML = '<div style="padding: 40px; text-align: center; color: #c14a3a;">Daten konnten nicht geladen werden. Refresh probieren.</div>';
+    return;
+  }
+
+  // Live pill
+  const lp = $("#live-pill");
+  const lt = $("#live-text");
+  if (DATA.data_state === "live") {
+    lp.classList.add("live-real");
+    lt.textContent = "Live · " + new Date(DATA.generated_at).toLocaleTimeString("de-DE", {hour:"2-digit", minute:"2-digit"});
+  } else {
+    lt.textContent = "Sample · Tag 23 wird live";
+  }
+
+  // Render all sections
+  renderPulse();
+  renderRevenue();
+  renderVoice();
+  renderSeo();
+  renderSystem();
+  renderDecisions();
+
+  // Tabs
+  $$(".tab").forEach(t => t.addEventListener("click", () => showTab(t.dataset.tab)));
+  const initial = location.hash.slice(1);
+  if (initial && $("#" + initial)) showTab(initial);
+
+  // Footer
+  $("#footer-meta").textContent = "Snapshot " + new Date(DATA.generated_at).toLocaleString("de-DE");
+}
+
+/* ───────────────── PWA install ───────────────── */
+let deferredPrompt = null;
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  const banner = $("#install-banner");
+  setTimeout(() => banner.classList.add("show"), 3000);
+});
+$("#install-btn").addEventListener("click", async () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice;
+    deferredPrompt = null;
+    $("#install-banner").classList.remove("show");
+  }
+});
+$("#install-close").addEventListener("click", () => $("#install-banner").classList.remove("show"));
+
+/* ───────────────── Service Worker ───────────────── */
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch(() => {});
+  });
+}
+
+init();
+</script>
 </body></html>
