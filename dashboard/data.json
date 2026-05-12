@@ -254,11 +254,146 @@
         "scraper": "Jina Reader"
       }
     ],
-    "cluster_count": 16,
-    "embeddings_real": false,
-    "embeddings_note": "Pipeline lief mit deterministischem Mock — Zähl-Aussagen (Mary 287×, Einwand-Frequenzen, Sentiment) sind regex-deterministisch und KORREKT. Real-LLM-Run zur Cluster-Verfeinerung im Hintergrund.",
-    "wishes_findings": [],
-    "wishes_note": "LLM-basierte Wunsch-Extraktion: 0 actionable Wishes im Public-Review-Korpus (deterministischer Pre-Scan: nur 8/2199 Reviews enthalten Wunsch-Pattern). Public Reviews sind Praise-Channel, nicht Wunsch-Channel. → Mary's eigene Instagram-DMs + Empfangs-Gespräche sind die echte Wunsch-Quelle (M9 iPad).",
+    "cluster_count": 20,
+    "embeddings_real": true,
+    "embeddings_note": "LLM-Pipeline (Gemini gemini-embedding-001 + gemini-2.5-flash für Cluster-Labels) lief erfolgreich. 2199 echte 1536-d Embeddings, 20 LLM-gelabelte Cluster. Spend ~$0.02.",
+    "cluster_labels_real": [
+      {
+        "label": "Freundliches Team, Top-Behandlung, Zufriedenheit",
+        "size": 215,
+        "tone": "praise"
+      },
+      {
+        "label": "Zufriedenheit, Wohlfühlen, Top-Ergebnisse",
+        "size": 209,
+        "tone": "praise"
+      },
+      {
+        "label": "Freundlichkeit, Kompetenz, Wohlbefinden",
+        "size": 179,
+        "tone": "praise"
+      },
+      {
+        "label": "Freundlichkeit, Wohlfühlen, Top-Ergebnisse",
+        "size": 168,
+        "tone": "praise"
+      },
+      {
+        "label": "Natürliche Lippen, super Service",
+        "size": 161,
+        "tone": "praise"
+      },
+      {
+        "label": "Freundlich, Top Ergebnisse, Zufriedenheit",
+        "size": 150,
+        "tone": "praise"
+      },
+      {
+        "label": "Mary: Kompetenz, Freundlichkeit, Top-Ergebnisse",
+        "size": 107,
+        "tone": "praise"
+      },
+      {
+        "label": "Exzellente Hydrafacial-Behandlung & Service",
+        "size": 107,
+        "tone": "praise"
+      },
+      {
+        "label": "Zufriedene Augenbrauen-Kunden",
+        "size": 107,
+        "tone": "praise"
+      },
+      {
+        "label": "Perfekte Augenbrauen, Top-Service",
+        "size": 105,
+        "tone": "praise"
+      },
+      {
+        "label": "Tolle Arbeit & nettes Team",
+        "size": 103,
+        "tone": "praise"
+      },
+      {
+        "label": "Konstante Kundenzufriedenheit",
+        "size": 102,
+        "tone": "praise"
+      },
+      {
+        "label": "Exzellente Laser-Haarentfernung",
+        "size": 95,
+        "tone": "praise"
+      },
+      {
+        "label": "Unprofessionelles Personal, Wartezeiten",
+        "size": 84,
+        "tone": "negative"
+      },
+      {
+        "label": "Mangelnde Beratung und Empathie (Sales-Pressure)",
+        "size": 76,
+        "tone": "negative"
+      },
+      {
+        "label": "Sehr gut und angenehm",
+        "size": 72,
+        "tone": "praise"
+      },
+      {
+        "label": "Lippenunterspritzung: Erstmalig, gut aufgehoben",
+        "size": 60,
+        "tone": "praise"
+      },
+      {
+        "label": "Wunschlippen: Natürlich und voll",
+        "size": 52,
+        "tone": "praise"
+      },
+      {
+        "label": "Begeisterte Stammkunden kommen wieder",
+        "size": 46,
+        "tone": "praise"
+      },
+      {
+        "label": "Schmerzfreie Behandlung, sympathischer Arzt",
+        "size": 1,
+        "tone": "praise"
+      }
+    ],
+    "cluster_tone_breakdown": {
+      "praise_reviews": 2039,
+      "negative_reviews": 160,
+      "praise_pct": 92.7,
+      "negative_pct": 7.3
+    },
+    "wishes_findings": [
+      {
+        "rank": 2,
+        "wish": "Lippen auflösen",
+        "confidence": 0.9,
+        "cluster_id": 13,
+        "cluster_size": 107,
+        "evidence_ids": [
+          "Ci9DQUlRQUNvZENodHljRjlvT21WTVZ6Tm1WV2d4UjBFME9IUjRVRXBqWldwVU5uYxAB",
+          "Ci9DQUlRQUNvZENodHljRjlvT2tkRE5Fd3dWM1ZRY2pWS1ZVcFNialJMV21KSFYxRRAB",
+          "Ci9DQUlRQUNvZENodHljRjlvT25NdGFWODJlWHBwVGpSV1VWWXRRMmRCWWpCb1MwRRAB"
+        ],
+        "sample_quote": "ich hätte mir nie vorstellen können, meine Lippen aufzulösen"
+      },
+      {
+        "rank": 4,
+        "wish": "Auflösung",
+        "confidence": 1,
+        "cluster_id": 19,
+        "cluster_size": 76,
+        "evidence_ids": [
+          "Ci9DQUlRQUNvZENodHljRjlvT2psTVpsUk9kbkZhUjNWNWNYTk1iM001TFROQlNGRRAB",
+          "Ci9DQUlRQUNvZENodHljRjlvT2xOTlZrbEVWMFl0VjBjelVsRm5OekZxZVVaNVpVRRAB",
+          "ChZDSUhNMG9nS0VPeVlqT3FNMUtUQk1BEAE"
+        ],
+        "sample_quote": "Ich habe mich daher entschieden, einen Termin zur Auflösung vereinbaren zu lassen."
+      }
+    ],
+    "wishes_note": "LLM-Extraktion (Gemini 2.5 Flash) fand 2 actionable Wünsche im Korpus nach Filter (False-Positives entfernt: Lash Lifting + Wimpernlifting — werden bereits von Linn bei Treatwell angeboten). Wichtigster Fund: 'Auflösung' (Cluster 19, 76 Reviews) — Kundinnen wollen PMU/Filler/Microblading von ANDEREN Studios rückgängig machen lassen.",
     "mary_personal_brand": {
       "name": "Mary (Inhaberin)",
       "role": "Inhaberin & Marken-Trägerin",
