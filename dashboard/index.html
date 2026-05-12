@@ -722,16 +722,14 @@ function renderRevenue() {
   donutChart($("#chart-donut"), DATA.attribution.map(a => ({ value: a.revenue_eur, color: a.color, label: a.source })));
 
   // Cohort heatmap
-  const months = ["M0", "M1", "M2", "M3", "M6", "M12"];
+  const months = ["M0", "M1", "M3", "M6", "M12"];
   const cells = DATA.cohorts;
-  const cols = months.length + 2;
   let grid = `<div class="cohort-grid" style="grid-template-columns: 100px 50px repeat(${months.length}, 1fr);">`;
   grid += `<div class="cohort-cell head">Cohort</div><div class="cohort-cell head">n</div>` + months.map(m => `<div class="cohort-cell head">${m}</div>`).join("");
   cells.forEach(c => {
     grid += `<div class="cohort-cell label">${c.label}</div>`;
     grid += `<div class="cohort-cell">${c.n}</div>`;
-    [c.rev_m0, c.rev_m1, c.rev_m1, c.rev_m3, c.rev_m6, c.rev_m12].forEach((v, i) => {
-      // skip M2 because we don't track it separately; use rev_m1 as proxy for visual
+    [c.rev_m0, c.rev_m1, c.rev_m3, c.rev_m6, c.rev_m12].forEach(v => {
       if (v == null) {
         grid += `<div class="cohort-cell">—</div>`;
       } else {
