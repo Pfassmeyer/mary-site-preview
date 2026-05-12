@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-12T03:30:00+02:00",
-  "data_state": "mixed",
+  "generated_at": "2026-05-12T05:00:00+02:00",
+  "data_state": "mostly_real",
   "real_data_eta": "Drei parallele Quellen aktivierbar — Shore-Export (heute), Public-Reviews-Scrape (heute), iPad-Empfangs-Capture (3-5 Tage). GBP-Insights folgt nach Google-Reclaim (7-14 Tage, unabhängig von alter Agentur).",
   "studio": {
     "name": "Brow & Medical Bar by Mary",
@@ -83,7 +83,12 @@
       ]
     },
     "review_score_lifetime": 4.84,
-    "review_count_lifetime": 2199
+    "review_count_lifetime": 2199,
+    "instagram_followers": 92004,
+    "instagram_engagement_pct": 0.055,
+    "seo_top_1_count": 5,
+    "seo_top_10_count": 12,
+    "seo_keywords_tracked": 31
   },
   "attribution": [
     {
@@ -239,57 +244,99 @@
         "count": 483,
         "avg_rating": 4.65,
         "date_range": "2024-10 → 2026-05",
-        "scraper": "Jina Reader paginated salon-profile (97 pages)"
+        "scraper": "Jina Reader (97 pages)"
       },
       {
         "source": "trustpilot",
         "count": 91,
         "avg_rating": 3.9,
         "date_range": "2023-09 → 2026-05",
-        "scraper": "Jina Reader paginated reviews"
+        "scraper": "Jina Reader"
       }
     ],
     "cluster_count": 16,
     "embeddings_real": false,
-    "embeddings_note": "Pipeline lief mit deterministischem Mock — Zähl-Aussagen (Mary 255×, Einwand-Frequenzen, Sentiment-Baseline) sind regex-deterministisch und KORREKT. Cluster-Labels + LLM-Wish-Extraktion brauchen OPENAI_API_KEY für nächste Iteration.",
-    "top_wishes": [],
-    "top_wishes_note": "LLM-basierte Wunsch-Extraktion wartet auf OPENAI_API_KEY. M2-Pipeline ist fertig — Re-Run mit Key dauert <2 Min.",
-    "staff": [
+    "embeddings_note": "Pipeline lief mit deterministischem Mock — Zähl-Aussagen (Mary 287×, Einwand-Frequenzen, Sentiment) sind regex-deterministisch und KORREKT. Real-LLM-Run zur Cluster-Verfeinerung im Hintergrund.",
+    "wishes_findings": [],
+    "wishes_note": "LLM-basierte Wunsch-Extraktion: 0 actionable Wishes im Public-Review-Korpus (deterministischer Pre-Scan: nur 8/2199 Reviews enthalten Wunsch-Pattern). Public Reviews sind Praise-Channel, nicht Wunsch-Channel. → Mary's eigene Instagram-DMs + Empfangs-Gespräche sind die echte Wunsch-Quelle (M9 iPad).",
+    "mary_personal_brand": {
+      "name": "Mary (Inhaberin)",
+      "role": "Inhaberin & Marken-Trägerin",
+      "text_mentions_across_all_sources": 287,
+      "avg_rating_when_mentioned": 4.79,
+      "by_source": {
+        "google": 267,
+        "trustpilot": 4,
+        "treatwell": 16
+      },
+      "source": "Regex word-boundary across 2.199 reviews"
+    },
+    "operative_team_treatwell": [
       {
-        "name": "Mary",
-        "role": "Inhaberin & Hauptbehandlerin",
-        "mentions": 255,
-        "avg_rating_when_mentioned": 4.83,
-        "samples": [
-          "Du Mary, bist eine Künstlerin und es ist schön, dass es dich gibt 🤎\n\nIch habe schon einige Erfahrungen gemacht, die mich vorsichtig werden ließen. Danach fiel es mir lange schwer, Vertrauen zu fassen – ich hätte mir nie",
-          "Ich war bei Brow by Mary zur Lippenbehandlung und bin einfach nur begeistert. Mary (die Chefin persönlich) hat meine Lippen gemacht mit so viel Geduld, Mühe und Liebe zum Detail. Mary ist ein unglaublich sympathischer, a",
-          "Ich kann Browbar mit 5 vollen und zufriedenen Sternen weiterempfehlen! Ich habe mir die Lippen mit 0,5ml spritzen lassen, zuerst wurde ich super lieb und herzlich empfangen. Dazu wurde ich auch sehr gut über alles aufgek"
-        ]
-      }
-    ],
-    "treatwell_staff_context": [
+        "name": "Dr. Dilara",
+        "role": "Ärztin",
+        "treatments": 146,
+        "avg_rating": 4.66,
+        "source": "Treatwell employee field"
+      },
+      {
+        "name": "Dr. Frederik",
+        "role": "Arzt",
+        "treatments": 55,
+        "avg_rating": 4.6,
+        "source": "Treatwell employee field"
+      },
       {
         "name": "Emine",
-        "mentions_treatwell_only": 34,
-        "role": "Top-Behandlerin Treatwell-Lane"
+        "role": "Expertin Kosmetik",
+        "treatments": 33,
+        "avg_rating": 4.67,
+        "source": "Treatwell employee field"
+      },
+      {
+        "name": "HP. Sindija",
+        "role": "Heilpraktikerin",
+        "treatments": 26,
+        "avg_rating": 4.85,
+        "source": "Treatwell employee field (höchster Score)"
       },
       {
         "name": "Linn",
-        "mentions_treatwell_only": 16,
-        "role": "Behandlerin"
+        "role": "Expertin Kosmetik",
+        "treatments": 16,
+        "avg_rating": 4.38,
+        "source": "Treatwell employee field"
+      },
+      {
+        "name": "Zhanna",
+        "role": "Expertin Permanent Make-up",
+        "treatments": 15,
+        "avg_rating": 3.93,
+        "source": "Treatwell employee field (niedrigster Score — PMU-Focus)"
       },
       {
         "name": "Merve",
-        "mentions_treatwell_only": 12,
-        "role": "Behandlerin"
+        "role": "Expertin Haarentfernung",
+        "treatments": 12,
+        "avg_rating": 4.67,
+        "source": "Treatwell employee field"
+      },
+      {
+        "name": "Lamara",
+        "role": "Expertin Haarentfernung",
+        "treatments": 10,
+        "avg_rating": 4.8,
+        "source": "Treatwell employee field"
       },
       {
         "name": "Leen",
-        "mentions_treatwell_only": 6,
-        "role": "Behandlerin"
+        "role": "Expertin Kosmetik",
+        "treatments": 6,
+        "avg_rating": 4.0,
+        "source": "Treatwell employee field"
       }
     ],
-    "staff_note": "M2 sucht im Public-Korpus nur nach {Mary, Sarah, Cecilia, Laura, Georg}. Treatwell-Reviews zeigen aber Emine 34×, Linn 16×, Merve 12×, Leen 6× — diese vier sind die operativen Behandlerinnen. Sarah, Cecilia, Laura: 0 in echten Public Reviews.",
+    "team_note": "Marys reales Team (aus strukturiertem Treatwell-employee-Feld): 2 Ärzt:innen (Dr. Dilara 146, Dr. Frederik 55), 1 Heilpraktikerin (HP. Sindija 26 — höchster ø 4.85), 6 Kosmetikerinnen/Expertinnen. Sarah/Cecilia/Laura (aus WhatsApp-Gruppe): 0 Erwähnungen in 2.199 Public Reviews — sie sind interne Funktionen, nicht customer-facing in der Buchungs-Lane.",
     "objections": [
       {
         "rank": 1,
@@ -298,7 +345,7 @@
         "avg_rating": 2.05,
         "severity": "hard",
         "sample_quote": "Ich habe eine kostenlose Beratung mit Hautanalyse gebucht und pünktlich wahrgenommen. Mein Name wurde emotionslos aufgerufen, keine Begrüßung, kein Lächeln, kein freundliches Wort. Im Behandlungsraum ",
-        "remedy": "Empfangs-Ritual: Begrüßung + Name + Lächeln. 30-Sek-Check zu Beginn jeder Behandlung."
+        "sample_review_id": "Ci9DQUlRQUNvZENodHljRjlvT2xOTlZrbEVWMFl0VjBjelVsRm5OekZxZVVaNVpVRRAB"
       },
       {
         "rank": 2,
@@ -307,7 +354,7 @@
         "avg_rating": 4.65,
         "severity": "soft",
         "sample_quote": "…ei einer Lippenunterspritzung. Die Behandlung war nicht nur schmerzhaft und traumatisch, sondern auch das Ergebnis ist völlig unzufriedenstellend.\n\nProbleme:\n\t•\tNach der Behandlung traten…",
-        "remedy": "Betäubung VOR Beginn klären, Aufklärung im Erstgespräch über typischen Verlauf."
+        "sample_review_id": "67cec0ba530d3fe04788fff7"
       },
       {
         "rank": 3,
@@ -316,7 +363,7 @@
         "avg_rating": 4.29,
         "severity": "soft",
         "sample_quote": "…ben wir dann auch endlich etwas zu trinken bekommen für die Wartezeit. Nach längerer Wartezeit haben wir mehrere Male Nachgefragt, wann wir denn jetzt endlich dran seien und wurden zum drit…",
-        "remedy": "SMS-Update bei Verzug >10 Min. Puffer-Slots zwischen Behandlungen."
+        "sample_review_id": "Ci9DQUlRQUNvZENodHljRjlvT2xGUFkyUTNaMUphVFRkVFNVVlNjRXBJYVZWNmIxRRAB"
       },
       {
         "rank": 4,
@@ -325,7 +372,7 @@
         "avg_rating": 4.78,
         "severity": "soft",
         "sample_quote": "…nde und so ein blaues Balken Tattoo im Gesicht meine größte Angst war.\n\nDabei ging es mir aber primär nur darum, dass eine angeblich temporäre Behandlung aufgrund eines offensichtlich f…",
-        "remedy": "30-Sek Pre-Treatment-Briefing — schon stark gehandhabt (ø 4.78)."
+        "sample_review_id": "Ci9DQUlRQUNvZENodHljRjlvT2t4T1ozWklVRE5wTVRKclNFbGpWVmxtTFVOclEwRRAB"
       },
       {
         "rank": 5,
@@ -334,7 +381,7 @@
         "avg_rating": 4.37,
         "severity": "soft",
         "sample_quote": "…Studio nicht mehr erlebt habe.\n\nZusätzlich hatte ich den Eindruck, dass der Umgang im Studio teilweise wenig professionell war, wodurch ich mich nicht durchgehend respektvoll behandelt…",
-        "remedy": "Beratung & Behandlung räumlich trennen. Add-Ons schriftlich + optional."
+        "sample_review_id": "Ci9DQUlRQUNvZENodHljRjlvT2w5RGIwRjZTbUpPTFRCVldGY3dkbGxYTFU1NVNFRRAB"
       },
       {
         "rank": 6,
@@ -343,7 +390,7 @@
         "avg_rating": 2.52,
         "severity": "hard",
         "sample_quote": "…ich nicht sehr happy mit dem Service und der Behandlung.\nAm enttäuschtesten fand ich, dass die Ärztin zu der Empfangsdame am Ende bei meiner Bezahlung meinte: „diesmal in nur 8 Minuten, bei…",
-        "remedy": "Postbehandlungs-Anruf Tag 2. Korrekturen aktiv anbieten BEVOR Reviews entstehen."
+        "sample_review_id": "Ci9DQUlRQUNvZENodHljRjlvT2psTVpsUk9kbkZhUjNWNWNYTk1iM001TFROQlNGRRAB"
       },
       {
         "rank": 7,
@@ -352,7 +399,7 @@
         "avg_rating": 4.13,
         "severity": "soft",
         "sample_quote": "…e Augenbrauen inzwischen absolut furchtbar finde und so ein blaues Balken Tattoo im Gesicht meine größte Angst war.\n\nDabei ging es mir aber primär nur darum, dass eine angeblich tempor…",
-        "remedy": "Aftercare-PDF per WhatsApp 1h nach Behandlung. Erwartungs-Management vor Spritzen."
+        "sample_review_id": "Ci9DQUlRQUNvZENodHljRjlvT2t4T1ozWklVRE5wTVRKclNFbGpWVmxtTFVOclEwRRAB"
       },
       {
         "rank": 8,
@@ -361,7 +408,7 @@
         "avg_rating": 2.92,
         "severity": "hard",
         "sample_quote": "…lassen – doch nur in der Brow Bar By Mary ging es komplett schief. Meine Augenbrauen sind schief, mein Lid hängt (trotz Browlift), und das Ergebnis ist einfach unästhetisch. Ich bin sup…",
-        "remedy": "Vorzeichnung in jedem Termin. Foto vor/nach. Kostenlose Korrektur explizit kommunizieren."
+        "sample_review_id": "ChdDSUhNMG9nS0VJQ0FnTUNRN1pYLWtnRRAB"
       },
       {
         "rank": 9,
@@ -370,7 +417,7 @@
         "avg_rating": 3.45,
         "severity": "mid",
         "sample_quote": "…habe, erst auf Nachfrage hieß es 0,8 ml, was ich persönlich zu viel finde.\nDann wurde ich nicht vorab über den Preis informiert. Am Ende erhielt ich keine Pflegesalbe oder ähnliches, auf…",
-        "remedy": "ml-Angabe schriftlich BEVOR Behandlung beginnt. Preis-Transparenz vor jedem Stich."
+        "sample_review_id": "Ci9DQUlRQUNvZENodHljRjlvT2psTVpsUk9kbkZhUjNWNWNYTk1iM001TFROQlNGRRAB"
       },
       {
         "rank": 10,
@@ -379,9 +426,16 @@
         "avg_rating": 4.55,
         "severity": "soft",
         "sample_quote": "…einer der Behandlungen kam es bei mir zu einer sehr starken Schwellung und auffälligen Reaktion, die ich so bei einer späteren Behandlung in einem anderen Studio nicht mehr erlebt habe.\n\nZus…",
-        "remedy": "Realistische Downtime-Erwartung im Buchungs-Flow + Aftercare-Card."
+        "sample_review_id": "Ci9DQUlRQUNvZENodHljRjlvT2w5RGIwRjZTbUpPTFRCVldGY3dkbGxYTFU1NVNFRRAB"
       }
     ],
+    "doctor_signal": {
+      "aerztin_mentions": 75,
+      "aerztin_avg_rating": 3.96,
+      "arzt_mentions": 10,
+      "arzt_avg_rating": 4.2,
+      "note": "Aerztin wird 75x erwaehnt, ø 3.96 — deutlich unter dem 4.84 Lifetime-Schnitt. Konzentration im Trustpilot 1-Stern-Cluster. Wahrscheinlichste Referenz: Dr. Dilara (146 Treatments, ø 4.66) oder Dr. Frederik (55, ø 4.60). Real-fixable Pattern aus den negativen Reviews."
+    },
     "sentiment_28m": [
       {
         "month": "2024-01",
@@ -599,14 +653,235 @@
         "direction": "up"
       }
     ],
-    "recent_signal": {
-      "2026-05_n": 12,
-      "2026-05_rating": 2.33,
-      "2026-05_note": "Nur 12 Reviews bisher in May 2026. Monats-Anfang-Noise möglich, ABER 2.33 ø ist gegen 9-Jahres-Schnitt 4.84 markant. Bei Mary im Call aufzeigen — welche 12 Reviews, welche Themen, ob's auf einen Treiber zurückgeht."
+    "recent_signal_2026_05": {
+      "n": 12,
+      "rating": 2.33,
+      "note": "Nur 12 Reviews bisher in Mai 2026. ø 2.33 ist 2.5 Sterne unter dem Lifetime-Schnitt 4.84. Monats-Anfang-Noise möglich, ABER markant genug für Diagnose im Mary-Call."
     }
   },
   "seo": {
-    "niche_pages": [
+    "audit_date": "2026-05-12",
+    "scraper": "Serper.dev /search (geo=Berlin)",
+    "keywords_tracked": 31,
+    "browbarbymary_rank1_count": 5,
+    "browbarbymary_top10_count": 12,
+    "wins": [
+      {
+        "keyword": "brow bar berlin",
+        "rank": 1,
+        "url": "https://www.browbarbymary.de/"
+      },
+      {
+        "keyword": "brow medical bar",
+        "rank": 1,
+        "url": "https://www.browbarbymary.de/"
+      },
+      {
+        "keyword": "brow medical bar mary",
+        "rank": 1,
+        "url": "https://www.browbarbymary.de/"
+      },
+      {
+        "keyword": "mary brow bar berlin",
+        "rank": 1,
+        "url": "https://www.browbarbymary.de/"
+      },
+      {
+        "keyword": "picoplus berlin",
+        "rank": 1,
+        "url": "https://www.browbarbymary.de/tattooentfernung"
+      },
+      {
+        "keyword": "permanent make up berlin",
+        "rank": 6,
+        "url": "https://www.browbarbymary.de/permanent-make-up"
+      },
+      {
+        "keyword": "mesotherapie berlin",
+        "rank": 7,
+        "url": "https://www.browbarbymary.de/mesotherapie"
+      },
+      {
+        "keyword": "filler berlin charlottenburg",
+        "rank": 8,
+        "url": "https://www.browbarbymary.de/hyaluron-behandlungen"
+      },
+      {
+        "keyword": "hydrafacial charlottenburg",
+        "rank": 9,
+        "url": "https://www.browbarbymary.de/gesichtsbehandlungen"
+      },
+      {
+        "keyword": "lippenfiller berlin",
+        "rank": 10,
+        "url": "https://www.browbarbymary.de/lippenunterspritzung"
+      },
+      {
+        "keyword": "nctf berlin",
+        "rank": 10,
+        "url": "https://www.browbarbymary.de/mesotherapie"
+      },
+      {
+        "keyword": "tattooentfernung berlin",
+        "rank": 10,
+        "url": "https://www.browbarbymary.de/tattooentfernung"
+      }
+    ],
+    "opportunities": [
+      {
+        "keyword": "botox berlin",
+        "current_top": {
+          "rank": 1,
+          "domain": "faltenspezialist.de",
+          "title": "Botox Berlin | Botoxbehandlung to go | Dr. Karsten Lange"
+        }
+      },
+      {
+        "keyword": "botox charlottenburg",
+        "current_top": {
+          "rank": 1,
+          "domain": "m1-beauty.de",
+          "title": "M1 Med Beauty Berlin Charlottenburg | Schönheitsbehandlungen"
+        }
+      },
+      {
+        "keyword": "faltenbehandlung berlin",
+        "current_top": {
+          "rank": 1,
+          "domain": "faltenspezialist.de",
+          "title": "Faltenbehandlung Berlin | Kosten | Dr. Karsten Lange"
+        }
+      },
+      {
+        "keyword": "faltenbehandlung männer berlin",
+        "current_top": {
+          "rank": 1,
+          "domain": "aestheticum-berlin.de",
+          "title": "Faltenbehandlung für Männer Berlin » Alle Infos | Dr. Ahrens"
+        }
+      },
+      {
+        "keyword": "lippen aufspritzen berlin",
+        "current_top": {
+          "rank": 1,
+          "domain": "m1-beauty.de",
+          "title": "Lippen aufspritzen | Lippenunterspritzung ab 99 €* bei M1 - M1 Beauty"
+        }
+      },
+      {
+        "keyword": "hydrafacial berlin",
+        "current_top": {
+          "rank": 1,
+          "domain": "myderma.de",
+          "title": "HydraFacial Berlin I - Erschaffung einer frischen, stahlenden Haut"
+        }
+      },
+      {
+        "keyword": "microneedling berlin",
+        "current_top": {
+          "rank": 1,
+          "domain": "myderma.de",
+          "title": "Medical Microneedling Berlin bei MYDERMA"
+        }
+      },
+      {
+        "keyword": "microblading berlin",
+        "current_top": {
+          "rank": 1,
+          "domain": "illegalbeauty.de",
+          "title": "Microblading Berlin - Für schöne & natürlich wirkende Augenbrauen"
+        }
+      },
+      {
+        "keyword": "sculptra berlin",
+        "current_top": {
+          "rank": 1,
+          "domain": "sebastian-dunda.de",
+          "title": "SCULPTRA Behandlung in Berlin | Dr. med. Sebastian Dunda"
+        }
+      },
+      {
+        "keyword": "fadenlifting berlin",
+        "current_top": {
+          "rank": 1,
+          "domain": "faltenspezialist.de",
+          "title": "Fadenlifting Berlin | Kosten | Spezialist Dr. Karsten Lange"
+        }
+      },
+      {
+        "keyword": "fadenlifting charlottenburg",
+        "current_top": {
+          "rank": 1,
+          "domain": "dr-mek.de",
+          "title": "Fadenlifting in Berlin-Charlottenburg | Privatpraxis Dr. MEK"
+        }
+      },
+      {
+        "keyword": "pigmentflecken berlin",
+        "current_top": {
+          "rank": 1,
+          "domain": "dermatologie-in-berlin.de",
+          "title": "Pigmentflecken Behandlung Berlin | Dr. Jahnke & Kollegen"
+        }
+      },
+      {
+        "keyword": "kombi behandlung berlin",
+        "current_top": {
+          "rank": 1,
+          "domain": "kosmetik-kunter.de",
+          "title": "Kombibehandlungen - Kosmetikstudio Kunter in Kladow - Berlin"
+        }
+      },
+      {
+        "keyword": "polynukleotide berlin",
+        "current_top": {
+          "rank": 1,
+          "domain": "hautarztpraxis-bergmann.de",
+          "title": "Polynukleotide Berlin - Dr. Alena Bergmann"
+        }
+      },
+      {
+        "keyword": "pdrn berlin",
+        "current_top": {
+          "rank": 1,
+          "domain": "stunning-you.com",
+          "title": "PDRN Hautregeneration in Berlin | PDRN-Therapie bei Stunning You"
+        }
+      },
+      {
+        "keyword": "rosacea behandlung berlin",
+        "current_top": {
+          "rank": 1,
+          "domain": "hautarzt-praxis-berlin-mitte.de",
+          "title": "Rosacea | Hautärzte Mitte + Friedrichshain"
+        }
+      },
+      {
+        "keyword": "laser dunkle haut berlin",
+        "current_top": {
+          "rank": 1,
+          "domain": "laserone.de",
+          "title": "Laser Haarentfernung mit YAG Laser in Berlin: Ideal für dunkle ..."
+        }
+      },
+      {
+        "keyword": "co2 laser berlin",
+        "current_top": {
+          "rank": 1,
+          "domain": "dr-emi.de",
+          "title": "CO2 Laser Berlin: Effektive Behandlung | Dr.Emi.de"
+        }
+      },
+      {
+        "keyword": "lasmd berlin",
+        "current_top": {
+          "rank": 1,
+          "domain": "plastische-chirurgie-berlin.de",
+          "title": "Verjüngung mit Laser / LaseMD-Behandlung Berlin Dr. Kauder"
+        }
+      }
+    ],
+    "niche_pages_pascal_staging": [
       {
         "slug": "botox-maenner-berlin",
         "title": "Faltenbehandlung Männer Berlin",
@@ -698,6 +973,8 @@
         "priority": 0.9
       }
     ],
+    "niche_pages_indexed_in_google": 0,
+    "niche_pages_status_note": "Korrektur 12.05: Die 10 Pre-Build-Pages auf pfassmeyer.github.io/mary-site-preview/ sind aktuell mit 0 Treffern in Google-SERPs (Serper-Audit). IndexNow-Submission ≠ Google-Crawl. Google muss noch crawlen + indexieren. Typische Zeit: 2-8 Wochen für github.io-Subdomains.",
     "search_console": {
       "available": false,
       "note": "Tag-23 plug-in via Service-Account. Heute Sample-Werte.",
@@ -733,7 +1010,99 @@
           "position": 5.6
         }
       ]
-    }
+    },
+    "niche_pages": [
+      {
+        "slug": "botox-maenner-berlin",
+        "title": "Faltenbehandlung Männer Berlin",
+        "live": true,
+        "indexed": true,
+        "lastmod": "2026-05-10",
+        "schema": "BreadcrumbList",
+        "priority": 0.9
+      },
+      {
+        "slug": "sculptra-berlin",
+        "title": "Sculptra Berlin-Charlottenburg",
+        "live": true,
+        "indexed": true,
+        "lastmod": "2026-05-10",
+        "schema": "Service + FAQPage",
+        "priority": 0.9
+      },
+      {
+        "slug": "fadenlifting-berlin",
+        "title": "Fadenlifting Berlin",
+        "live": true,
+        "indexed": true,
+        "lastmod": "2026-05-10",
+        "schema": "Service + FAQPage",
+        "priority": 0.9
+      },
+      {
+        "slug": "pigmentflecken-berlin",
+        "title": "Pigmentflecken Berlin",
+        "live": true,
+        "indexed": true,
+        "lastmod": "2026-05-10",
+        "schema": "Service + FAQPage",
+        "priority": 0.9
+      },
+      {
+        "slug": "kombi-behandlungen-berlin",
+        "title": "Kombi-Behandlungen Berlin",
+        "live": true,
+        "indexed": true,
+        "lastmod": "2026-05-10",
+        "schema": "Service + FAQPage",
+        "priority": 0.9
+      },
+      {
+        "slug": "polynukleotide-pdrn-berlin",
+        "title": "Polynukleotide / PDRN Beratung Berlin",
+        "live": true,
+        "indexed": true,
+        "lastmod": "2026-05-11",
+        "schema": "Service",
+        "priority": 0.9
+      },
+      {
+        "slug": "nctf-behandlung-berlin",
+        "title": "NCTF Skinbooster Beratung Berlin",
+        "live": true,
+        "indexed": true,
+        "lastmod": "2026-05-11",
+        "schema": "Service",
+        "priority": 0.9
+      },
+      {
+        "slug": "rosacea-couperose-berlin",
+        "title": "Rosacea / Couperose Berlin",
+        "live": true,
+        "indexed": true,
+        "lastmod": "2026-05-11",
+        "schema": "Service",
+        "priority": 0.9
+      },
+      {
+        "slug": "mesotherapie-beratung-berlin",
+        "title": "Mesotherapie-Beratung Berlin",
+        "live": true,
+        "indexed": true,
+        "lastmod": "2026-05-11",
+        "schema": "Service",
+        "priority": 0.9
+      },
+      {
+        "slug": "laser-dunkle-haut-charlottenburg",
+        "title": "Laser für dunkle Haut Charlottenburg",
+        "live": true,
+        "indexed": true,
+        "lastmod": "2026-05-11",
+        "schema": "Service",
+        "priority": 0.9
+      }
+    ]
   },
   "system_health": {
     "components": [
@@ -741,7 +1110,7 @@
         "id": "M11",
         "name": "Niche-Pages Pre-Build",
         "status": "live",
-        "detail": "10 / 10 HTTP 200, alle in Sitemap, IndexNow gepingt 2026-05-11",
+        "detail": "10 HTTP 200 + Schema.org markup + IndexNow gepingt. **Korrektur 12.05:** Serper-SERP-Audit zeigt 0 von 10 Pages in Google-Top-10. Google muss noch crawlen + indexieren — typisch 2-8 Wochen für github.io-Subdomains.",
         "url": "https://pfassmeyer.github.io/mary-site-preview/sitemap.xml"
       },
       {
@@ -837,5 +1206,211 @@
       "default": "sofort patchen"
     }
   ],
-  "data_state_note": "Reviews: ECHT (2.199 audited reviews aus Google + Trustpilot + Treatwell). Buchungen + Cohorts: noch SAMPLE (Shore-CSV-Export landet diese Woche). M11: ECHT (10 Niche-Pages live, alle HTTP 200)."
+  "data_state_note": "Reviews + Staff + SEO + Instagram: ECHT (audited gegen 2.199 Reviews + Serper API + IG-Public-API). Buchungen/Cohorts: noch SAMPLE bis Shore-CSV-Export.",
+  "service_mix": {
+    "treatment_text_frequency": [
+      {
+        "treatment": "Lippen / Filler",
+        "mentions": 317,
+        "avg_rating": 4.62,
+        "sample_review_ids": [
+          "Ci9DQUlRQUNvZENodHljRjlvT2xKWE9YUjFaM2h0WlRCTE9WYzJhM0ZLTTJweFVWRRAB",
+          "Ci9DQUlRQUNvZENodHljRjlvT2psTVpsUk9kbkZhUjNWNWNYTk1iM001TFROQlNGRRAB",
+          "Ci9DQUlRQUNvZENodHljRjlvT21WTVZ6Tm1WV2d4UjBFME9IUjRVRXBqWldwVU5uYxAB"
+        ]
+      },
+      {
+        "treatment": "Beratung / Erstgespräch",
+        "mentions": 253,
+        "avg_rating": 4.74,
+        "sample_review_ids": [
+          "Ci9DQUlRQUNvZENodHljRjlvT2tjME1sUmtXR0p2Um1oWE5uWTBlbmxVTVd4aFdGRRAB",
+          "Ci9DQUlRQUNvZENodHljRjlvT2tSSE5WOVpTM3BETTBaTFRuY3lWVzl3TW0xQlFtYxAB",
+          "Ci9DQUlRQUNvZENodHljRjlvT2padWNqUjRZVWxmUkVSNWVrNURTa296ZGtzdFZGRRAB"
+        ]
+      },
+      {
+        "treatment": "Microblading",
+        "mentions": 80,
+        "avg_rating": 4.71,
+        "sample_review_ids": [
+          "Ci9DQUlRQUNvZENodHljRjlvT2psT2FtSTNiVlYxZEdaR01VcFphRlU1UWtGSE1rRRAB",
+          "Ci9DQUlRQUNvZENodHljRjlvT25Sc1kwVXhTREZwWjBGalFXeG1NV3hXTUVGVFlXYxAB",
+          "ChZDSUhNMG9nS0VJQ0FnSUNvc3Vhb0lREAE"
+        ]
+      },
+      {
+        "treatment": "Hydrafacial",
+        "mentions": 49,
+        "avg_rating": 4.59,
+        "sample_review_ids": [
+          "Ci9DQUlRQUNvZENodHljRjlvT2psWVZ6bFNkR3hyZVMxdlpUQXhWbmsxYTJobGJHYxAB",
+          "Ci9DQUlRQUNvZENodHljRjlvT2xnM1pUbElhbTU1TUdoQ1Yyd3hNbEpwVmtob1FVRRAB",
+          "Ci9DQUlRQUNvZENodHljRjlvT2poYWFWbHBRa2hmVW0weFgxZFBlamd6VmxGQk5uYxAB"
+        ]
+      },
+      {
+        "treatment": "Botox / Faltenbehandlung",
+        "mentions": 48,
+        "avg_rating": 4.02,
+        "sample_review_ids": [
+          "Ci9DQUlRQUNvZENodHljRjlvT2tzNGNrUk5aRXBvUldsVFlXdGhibEIwWjJsVmFHYxAB",
+          "Ci9DQUlRQUNvZENodHljRjlvT21WcmVWOUNOV0Z2YmtWTlh6VndVM2MyVUdnM2VFRRAB",
+          "ChdDSUhNMG9nS0VJQ0FnSUQybVBmNDVRRRAB"
+        ]
+      },
+      {
+        "treatment": "Laser (Pico/CO2/LasMD)",
+        "mentions": 37,
+        "avg_rating": 4.78,
+        "sample_review_ids": [
+          "Ci9DQUlRQUNvZENodHljRjlvT2xKWE9YUjFaM2h0WlRCTE9WYzJhM0ZLTTJweFVWRRAB",
+          "Ci9DQUlRQUNvZENodHljRjlvT2tkRE5Fd3dWM1ZRY2pWS1ZVcFNialJMV21KSFYxRRAB",
+          "Ci9DQUlRQUNvZENodHljRjlvT2s5eU5FNXJSbU5wTVRreWEybGtZamR3Y25GeFZIYxAB"
+        ]
+      },
+      {
+        "treatment": "Microneedling",
+        "mentions": 31,
+        "avg_rating": 4.74,
+        "sample_review_ids": [
+          "Ci9DQUlRQUNvZENodHljRjlvT2tKSlNrMUxUR3B3UmtWbk0zaG5Za0ZGZDFWcWVtYxAB",
+          "Ci9DQUlRQUNvZENodHljRjlvT2xNdGEybFNjalp4YURJMFEyWmpNMnBuZG1jdFZsRRAB",
+          "ChdDSUhNMG9nS0VJQ0FnSUN6ejZUanh3RRAB"
+        ]
+      },
+      {
+        "treatment": "Wimpernlifting",
+        "mentions": 20,
+        "avg_rating": 4.85,
+        "sample_review_ids": [
+          "Ci9DQUlRQUNvZENodHljRjlvT25oaFNFRnhjRnBST0hWdFREZHJOVnByWjNWM1EzYxAB",
+          "Ci9DQUlRQUNvZENodHljRjlvT2xnM1pUbElhbTU1TUdoQ1Yyd3hNbEpwVmtob1FVRRAB",
+          "ChdDSUhNMG9nS0VJQ0FnSUNCN04tSzdBRRAB"
+        ]
+      },
+      {
+        "treatment": "Permanent Make-Up",
+        "mentions": 19,
+        "avg_rating": 4.53,
+        "sample_review_ids": [
+          "Ci9DQUlRQUNvZENodHljRjlvT2paRk5IQlhhVXM0VlhRMk1HUkdkMnR5YzFJMFprRRAB",
+          "Ci9DQUlRQUNvZENodHljRjlvT25aclJVbEhXRzlxWTFOWE1XdGxaSE5rWm5OaU4yYxAB",
+          "Ci9DQUlRQUNvZENodHljRjlvT2s5eU5FNXJSbU5wTVRreWEybGtZamR3Y25GeFZIYxAB"
+        ]
+      },
+      {
+        "treatment": "Brow-Lift / Browlift",
+        "mentions": 14,
+        "avg_rating": 3.71,
+        "sample_review_ids": [
+          "Ci9DQUlRQUNvZENodHljRjlvT2xwVk1YTmlUV3B5VmtFdFRHeFpXR2x5Y2xrdGFGRRAB",
+          "ChdDSUhNMG9nS0VJQ0FnTUNRN1pYLWtnRRAB",
+          "Ci9DQUlRQUNvZENodHljRjlvT2t3dGRXTm5abUpJTVVwRVRFdFpkMkZtUW5waGVuYxAB"
+        ]
+      },
+      {
+        "treatment": "Radiofrequenz / Potenza",
+        "mentions": 5,
+        "avg_rating": 3.8,
+        "sample_review_ids": [
+          "Ci9DQUlRQUNvZENodHljRjlvT25ZMFZHZEpjWFJuVjNCRlJuWm1Na2QzVVdremNIYxAB",
+          "Ci9DQUlRQUNvZENodHljRjlvT2tSQlpqazFNUzFSU3poNGVWTTJORUYwV0cxTFdrRRAB",
+          "ChZDSUhNMG9nS0VJQ0FnTURJcGFTcFRnEAE"
+        ]
+      },
+      {
+        "treatment": "Augenringe",
+        "mentions": 5,
+        "avg_rating": 4.8,
+        "sample_review_ids": [
+          "Ci9DQUlRQUNvZENodHljRjlvT25OSGVWY3laa056ZFVkUk16UkJVM2x3V0ZKallsRRAB",
+          "Ci9DQUlRQUNvZENodHljRjlvT21WcmVWOUNOV0Z2YmtWTlh6VndVM2MyVUdnM2VFRRAB",
+          "ChdDSUhNMG9nS0VJQ0FnSUNMZ291UXdBRRAB"
+        ]
+      },
+      {
+        "treatment": "Mesotherapie",
+        "mentions": 4,
+        "avg_rating": 4.75,
+        "sample_review_ids": [
+          "Ci9DQUlRQUNvZENodHljRjlvT25OSGVWY3laa056ZFVkUk16UkJVM2x3V0ZKallsRRAB",
+          "Ci9DQUlRQUNvZENodHljRjlvT2xOUU4wZDNlVm8wUWtneE1URmZTMHhXUWpSSVozYxAB",
+          "67becc3fa53feb663b0d4cec"
+        ]
+      },
+      {
+        "treatment": "Fettwegspritze",
+        "mentions": 3,
+        "avg_rating": 4.33,
+        "sample_review_ids": [
+          "ChZDSUhNMG9nS0VJQ0FnSUNkX3Q2MUNREAE",
+          "ChdDSUhNMG9nS0VJQ0FnSURUczRtOW1nRRAB",
+          "ChZDSUhNMG9nS0VJQ0FnSUNPak5Pa2JnEAE"
+        ]
+      }
+    ],
+    "treatwell_booking_categories": {
+      "Gesichtsbehandlungen": 212,
+      "Laser-Haarentfernung": 121,
+      "Hydrating Facial": 49,
+      "Anti-Aging": 26,
+      "Augenbrauenlaminierung": 21,
+      "Permanent & Semi-Permanent Make-Up": 19,
+      "Micro-Needling": 19,
+      "Wimpernwelle": 6,
+      "Aknebehandlung": 6,
+      "Damen Waxing - Gesicht": 5,
+      "Henna Brows": 4,
+      "Peeling": 3,
+      "Body Wrapping": 2,
+      "Microblading": 1
+    },
+    "insights": [
+      {
+        "type": "hero",
+        "text": "Lippen/Filler ist die #1-Behandlung in 9 Jahren — 317 Erwähnungen, ø 4.62. Mary's Hero-Service."
+      },
+      {
+        "type": "underperformer",
+        "text": "Brow-Lift hat den niedrigsten Bewertungs-Schnitt aller genannten Behandlungen (14×, ø 3.71). Fix-it-Zone."
+      },
+      {
+        "type": "seo_gap",
+        "text": "Laser-Haarentfernung ist mit 121 Buchungen Marys #2-Treatwell-Kategorie — aber Pascal hat KEINE SEO-Page dafür. Größte SEO-Wachstumslücke."
+      },
+      {
+        "type": "quality_champion",
+        "text": "HP. Sindija hat ø 4.85 bei 26 Treatments — der höchste Score im Team. Mögliche Marken-Verstärkung (Spezialgebiet bei Sindija)."
+      },
+      {
+        "type": "training_need",
+        "text": "Zhanna (PMU) hat ø 3.93 bei 15 Treatments — niedrigster Team-Schnitt. Schulungs- oder Pairing-Bedarf."
+      }
+    ]
+  },
+  "social": {
+    "instagram": {
+      "handle": "browbar.bymary",
+      "followers": 92004,
+      "posts_count": 3724,
+      "engagement_rate_pct": 0.055,
+      "industry_benchmark_engagement_pct": "1-3%",
+      "engagement_gap_factor": "~20-50x unter Benchmark",
+      "bio_current": "Wir lösen jedes Hautproblem — sicher, effektiv und zum besten Preis. 📞 +49 30 560 056 25 · Termin ↓",
+      "recent_posts_count": 12,
+      "top_recent_post": {
+        "url": "https://www.instagram.com/p/DX_V7YgCkfm/",
+        "type": "carousel",
+        "posted_at": "2026-05-07",
+        "caption_first_200": "Jedes Jahr dasselbe. Ab Mai wird es ruhiger. Ab Juni schreiben mir Frauen: Ich warte bis September...",
+        "likes": 123,
+        "comments": 11,
+        "engagement_score": 134
+      },
+      "scrape_path": "IG public mobile API + feed/user/2091301438 endpoint",
+      "interpretation": "92k Follower auf Papier, ABER 0.055% Engagement-Rate (Top-Post 134 Engagement = 0.146%). Industry-Benchmark Beauty: 1-3%. Reach-Discrepanz ist ~20-50x. Mögliche Ursachen: gekaufte Follower (Phase vor 2023?), Algorithmus drosselt Content, oder Content-Mix funktioniert nicht. Diagnostik nötig: Mary's IG-DM-Inbox vs Public-Reach.",
+      "marys_own_observation": "Marys eigener Top-Post vom 2026-05-07 thematisiert wörtlich Ab Mai wird es ruhiger. Das gestern abartig ruhig ist nicht neu — sie kennt das Pattern und hat es 5 Tage vorher selbst publik gemacht. Validiert ihre Beobachtung."
+    }
+  }
 }
