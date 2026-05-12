@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-12T01:30:00+02:00",
+  "generated_at": "2026-05-12T02:15:00+02:00",
   "data_state": "sample",
-  "real_data_eta": "Nach Laura-GBP-Transfer (typisch 5-14 Tage)",
+  "real_data_eta": "Drei parallele Quellen aktivierbar — Shore-Export (heute), Public-Reviews-Scrape (heute), iPad-Empfangs-Capture (3-5 Tage). GBP-Insights folgt nach Google-Reclaim (7-14 Tage, unabhängig von alter Agentur).",
   "studio": {
     "name": "Brow & Medical Bar by Mary",
     "location": "Bleibtreustraße 18, 10623 Berlin-Charlottenburg",
@@ -134,18 +134,20 @@
   "system_health": {
     "components": [
       { "id": "M11", "name": "Niche-Pages Pre-Build", "status": "live", "detail": "10 / 10 HTTP 200, alle in Sitemap, IndexNow gepingt 2026-05-11", "url": "https://pfassmeyer.github.io/mary-site-preview/sitemap.xml" },
-      { "id": "M3",  "name": "Dashboard CLI",          "status": "live", "detail": "1.036 LOC Bun TS, läuft auf Sample. Tag-23 plug-in via Env-Vars.", "url": null },
-      { "id": "M2",  "name": "Review Intelligence",    "status": "live", "detail": "1.927 LOC, 4/4 Tests grün, Sample-Lauf 0.9s, plug-in 1 Command.", "url": null },
+      { "id": "M3",  "name": "Dashboard CLI",          "status": "live", "detail": "1.036 LOC Bun TS, läuft auf Sample. Shore-Export aktiviert Buchungen + Cohort + LTV — ohne Inhaberschaft.", "url": null },
+      { "id": "M2",  "name": "Review Intelligence",    "status": "live", "detail": "1.927 LOC, 4/4 Tests grün, Sample-Lauf 0.9s. 1.904 Reviews sind öffentlich → public scrape liefert echte Daten ohne GBP-Inhaberschaft.", "url": null },
       { "id": "M6",  "name": "HWG Compliance Memo",    "status": "live", "detail": "1-Pager an Mary übergeben (10.05). Linter-Stufe pending.", "url": null },
-      { "id": "M9",  "name": "iPad Source-Capture",    "status": "planned", "detail": "Plan B falls GBP-Transfer >60d stalled. €40 Hardware + Tally Form.", "url": null },
-      { "id": "M5",  "name": "One-Day Indexation",     "status": "ready", "detail": "Aktiviert sobald Mary's Domain-Zugang da ist.", "url": null }
+      { "id": "M9",  "name": "iPad Source-Capture",    "status": "ready", "detail": "€40 Hardware + Tally Form. Liefert echte Attribution-Ground-Truth UNABHÄNGIG von GBP-Insights. 6 Wochen = 1.200 Datenpunkte.", "url": null },
+      { "id": "M5",  "name": "One-Day Indexation",     "status": "ready", "detail": "Aktiviert sobald Marys Domain-Zugang da ist.", "url": null },
+      { "id": "M10", "name": "GBP-Public-Snapshot",    "status": "ready", "detail": "SerpAPI Place-Details liefert Rating, Review-Count, Photo-Count, Q&A, Posts — alles öffentlich, KEINE Inhaberschaft. Tägliche Snapshots in Dashboard möglich.", "url": null },
+      { "id": "M12", "name": "Google-Reclaim Pfad",   "status": "ready", "detail": "support.google.com/business/answer/4566671 → Mary fordert direkt an. Google sendet 7-Tage-Frist an alte Inhaberin. Bei Non-Reaktion: automatischer Übergang. Postkarten-Fallback an Bleibtreustraße 18 wenn nötig.", "url": "https://support.google.com/business/answer/4566671" }
     ],
     "tag_23_countdown": {
-      "target": "GBP-Transfer + GSC Property-Verification",
-      "blocked_by": "Laura/Agentur hält Inhaberschaft",
-      "next_action": "Send 1: Laura-direkt-Nachricht (Pascal pending y-approval via Hermes)",
-      "fallback_after_days": 60,
-      "fallback_action": "M9 iPad-Source-Capture aktivieren"
+      "target": "Echte Daten ins Dashboard — DREI parallele Pfade",
+      "blocked_by": "Korrektur 12.05: Laura hat das GBP nicht selbst — sie wartet seit 06.05 auch auf alte Agentur. „Sobald Laura zurückgibt" war falsches Framing.",
+      "next_action": "Drei Pfade parallel: (A) Mary Shore-CSV-Export → echte Buchungen/Cohort/LTV heute. (B) Pascal public-scrape 1.904 Reviews → echtes M2 heute. (C) iPad-Empfangs-Capture bestellen → echte Attribution in 6 Wochen.",
+      "fallback_after_days": 14,
+      "fallback_action": "Google-Reclaim startet parallel; Postkarten-Verifikation an Praxisadresse als Last-Resort. Beides UNABHÄNGIG von alter Agentur."
     }
   },
   "decisions_pending": [
