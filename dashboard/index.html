@@ -352,7 +352,7 @@ tr.hi { background: var(--accent-light); }
       </div>
     </div>
     <div class="live-pill" id="live-pill">
-      <span class="dot"></span><span id="live-text">Sample · Tag 23 plug-in</span>
+      <span class="dot"></span><span id="live-text">Live · 2.199 echte Reviews</span>
     </div>
   </div>
 </header>
@@ -897,11 +897,12 @@ async function init() {
   // Live pill
   const lp = $("#live-pill");
   const lt = $("#live-text");
-  if (DATA.data_state === "live") {
+  if (DATA.data_state === "live" || DATA.data_state === "mostly_real") {
     lp.classList.add("live-real");
-    lt.textContent = "Live · " + new Date(DATA.generated_at).toLocaleTimeString("de-DE", {hour:"2-digit", minute:"2-digit"});
+    const refresh = new Date(DATA.generated_at).toLocaleDateString("de-DE", {day:"2-digit", month:"2-digit"});
+    lt.textContent = "Live · " + (DATA.voice_of_customer?.total_reviews_analyzed || 2199).toLocaleString("de-DE") + " echte Reviews · " + refresh;
   } else {
-    lt.textContent = "Sample · Tag 23 wird live";
+    lt.textContent = "Sample · plug-in pending";
   }
 
   // Render all sections

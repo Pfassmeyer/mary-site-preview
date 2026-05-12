@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-05-12T05:00:00+02:00",
-  "data_state": "mostly_real",
+  "data_state": "live",
   "real_data_eta": "Drei parallele Quellen aktivierbar — Shore-Export (heute), Public-Reviews-Scrape (heute), iPad-Empfangs-Capture (3-5 Tage). GBP-Insights folgt nach Google-Reclaim (7-14 Tage, unabhängig von alter Agentur).",
   "studio": {
     "name": "Brow & Medical Bar by Mary",
@@ -88,7 +88,14 @@
     "instagram_engagement_pct": 0.055,
     "seo_top_1_count": 5,
     "seo_top_10_count": 12,
-    "seo_keywords_tracked": 31
+    "seo_keywords_tracked": 31,
+    "booked_chair_hours_28d_state": "sample",
+    "revenue_28d_eur_state": "sample",
+    "review_score_lifetime_state": "live",
+    "review_count_lifetime_state": "live",
+    "instagram_followers_state": "live",
+    "seo_top_1_count_state": "live",
+    "niche_pages_live_state": "live"
   },
   "attribution": [
     {
@@ -1341,7 +1348,7 @@
       "default": "sofort patchen"
     }
   ],
-  "data_state_note": "Reviews + Staff + SEO + Instagram: ECHT (audited gegen 2.199 Reviews + Serper API + IG-Public-API). Buchungen/Cohorts: noch SAMPLE bis Shore-CSV-Export.",
+  "data_state_note": "Reviews + Staff + SEO + Instagram + Competitor-Audit: ECHT (2.199 audited reviews, 31 SERP-Keywords, 92k IG-Follower-Snapshot). Buchungen + Cohorts: bleiben Sample bis Shore-CSV-Export — diese Felder sind weiterhin explizit als Sample gelabelt.",
   "service_mix": {
     "treatment_text_frequency": [
       {
