@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-12T02:15:00+02:00",
-  "data_state": "sample",
+  "generated_at": "2026-05-12T03:30:00+02:00",
+  "data_state": "mixed",
   "real_data_eta": "Drei parallele Quellen aktivierbar — Shore-Export (heute), Public-Reviews-Scrape (heute), iPad-Empfangs-Capture (3-5 Tage). GBP-Insights folgt nach Google-Reclaim (7-14 Tage, unabhängig von alter Agentur).",
   "studio": {
     "name": "Brow & Medical Bar by Mary",
@@ -15,132 +15,784 @@
     "new_customers_28d": 17,
     "returning_customers_28d": 4,
     "avg_booking_value_eur": 522.29,
-    "review_score_28d": 4.74,
-    "review_count_28d": 12,
+    "review_score_28d": 4.32,
+    "review_count_28d": 32,
     "niche_pages_live": 10,
     "niche_pages_indexed_pct": 100,
     "utm_coverage_pct": 100,
     "sparklines": {
-      "bookings_daily": [0,2,1,3,0,1,4,2,0,1,3,0,2,1,0,4,1,0,2,1,3,2,0,1,2,3,1,2],
-      "revenue_daily_eur": [0,820,520,1100,0,420,1380,990,0,460,1340,0,860,520,0,1640,520,0,820,520,1340,990,0,520,820,1190,520,820]
-    }
+      "bookings_daily": [
+        0,
+        2,
+        1,
+        3,
+        0,
+        1,
+        4,
+        2,
+        0,
+        1,
+        3,
+        0,
+        2,
+        1,
+        0,
+        4,
+        1,
+        0,
+        2,
+        1,
+        3,
+        2,
+        0,
+        1,
+        2,
+        3,
+        1,
+        2
+      ],
+      "revenue_daily_eur": [
+        0,
+        820,
+        520,
+        1100,
+        0,
+        420,
+        1380,
+        990,
+        0,
+        460,
+        1340,
+        0,
+        860,
+        520,
+        0,
+        1640,
+        520,
+        0,
+        820,
+        520,
+        1340,
+        990,
+        0,
+        520,
+        820,
+        1190,
+        520,
+        820
+      ]
+    },
+    "review_score_lifetime": 4.84,
+    "review_count_lifetime": 2199
   },
   "attribution": [
-    { "source": "google", "label": "Google Organic + Maps", "bookings": 6, "revenue_eur": 3200, "color": "#7a5e3f" },
-    { "source": "niche-page", "label": "Niche-Pages (Pascal)", "bookings": 3, "revenue_eur": 2270, "color": "#b8926a" },
-    { "source": "email", "label": "E-Mail-Kampagne", "bookings": 2, "revenue_eur": 1998, "color": "#2d6a4f" },
-    { "source": "whatsapp", "label": "WhatsApp-Kampagne", "bookings": 4, "revenue_eur": 1430, "color": "#40916c" },
-    { "source": "direct", "label": "Direkt / Stammkunden", "bookings": 3, "revenue_eur": 1280, "color": "#c9a87b" },
-    { "source": "instagram", "label": "Instagram / Social", "bookings": 3, "revenue_eur": 790, "color": "#e07856" }
+    {
+      "source": "google",
+      "label": "Google Organic + Maps",
+      "bookings": 6,
+      "revenue_eur": 3200,
+      "color": "#7a5e3f"
+    },
+    {
+      "source": "niche-page",
+      "label": "Niche-Pages (Pascal)",
+      "bookings": 3,
+      "revenue_eur": 2270,
+      "color": "#b8926a"
+    },
+    {
+      "source": "email",
+      "label": "E-Mail-Kampagne",
+      "bookings": 2,
+      "revenue_eur": 1998,
+      "color": "#2d6a4f"
+    },
+    {
+      "source": "whatsapp",
+      "label": "WhatsApp-Kampagne",
+      "bookings": 4,
+      "revenue_eur": 1430,
+      "color": "#40916c"
+    },
+    {
+      "source": "direct",
+      "label": "Direkt / Stammkunden",
+      "bookings": 3,
+      "revenue_eur": 1280,
+      "color": "#c9a87b"
+    },
+    {
+      "source": "instagram",
+      "label": "Instagram / Social",
+      "bookings": 3,
+      "revenue_eur": 790,
+      "color": "#e07856"
+    }
   ],
   "cohorts": [
-    { "month": "2025-11", "label": "Nov 2025", "n": 18, "rev_m0": 3200, "rev_m1": 2100, "rev_m3": 1450, "rev_m6": 820, "rev_m12": 650, "ret_m3": 0.39, "ret_m6": 0.28, "ret_m12": 0.18 },
-    { "month": "2025-12", "label": "Dez 2025", "n": 24, "rev_m0": 4180, "rev_m1": 2620, "rev_m3": 1980, "rev_m6": 1110, "rev_m12": null, "ret_m3": 0.42, "ret_m6": 0.32, "ret_m12": null },
-    { "month": "2026-01", "label": "Jan 2026", "n": 31, "rev_m0": 5390, "rev_m1": 3210, "rev_m3": 2510, "rev_m6": null, "rev_m12": null, "ret_m3": 0.45, "ret_m6": null, "ret_m12": null },
-    { "month": "2026-02", "label": "Feb 2026", "n": 28, "rev_m0": 4720, "rev_m1": 2950, "rev_m3": null, "rev_m6": null, "rev_m12": null, "ret_m3": null, "ret_m6": null, "ret_m12": null },
-    { "month": "2026-03", "label": "Mär 2026", "n": 35, "rev_m0": 6090, "rev_m1": 3640, "rev_m3": null, "rev_m6": null, "rev_m12": null, "ret_m3": null, "ret_m6": null, "ret_m12": null },
-    { "month": "2026-04", "label": "Apr 2026", "n": 42, "rev_m0": 7180, "rev_m1": null, "rev_m3": null, "rev_m6": null, "rev_m12": null, "ret_m3": null, "ret_m6": null, "ret_m12": null },
-    { "month": "2026-05", "label": "Mai 2026", "n": 12, "rev_m0": 2050, "rev_m1": null, "rev_m3": null, "rev_m6": null, "rev_m12": null, "ret_m3": null, "ret_m6": null, "ret_m12": null }
+    {
+      "month": "2025-11",
+      "label": "Nov 2025",
+      "n": 18,
+      "rev_m0": 3200,
+      "rev_m1": 2100,
+      "rev_m3": 1450,
+      "rev_m6": 820,
+      "rev_m12": 650,
+      "ret_m3": 0.39,
+      "ret_m6": 0.28,
+      "ret_m12": 0.18
+    },
+    {
+      "month": "2025-12",
+      "label": "Dez 2025",
+      "n": 24,
+      "rev_m0": 4180,
+      "rev_m1": 2620,
+      "rev_m3": 1980,
+      "rev_m6": 1110,
+      "rev_m12": null,
+      "ret_m3": 0.42,
+      "ret_m6": 0.32,
+      "ret_m12": null
+    },
+    {
+      "month": "2026-01",
+      "label": "Jan 2026",
+      "n": 31,
+      "rev_m0": 5390,
+      "rev_m1": 3210,
+      "rev_m3": 2510,
+      "rev_m6": null,
+      "rev_m12": null,
+      "ret_m3": 0.45,
+      "ret_m6": null,
+      "ret_m12": null
+    },
+    {
+      "month": "2026-02",
+      "label": "Feb 2026",
+      "n": 28,
+      "rev_m0": 4720,
+      "rev_m1": 2950,
+      "rev_m3": null,
+      "rev_m6": null,
+      "rev_m12": null,
+      "ret_m3": null,
+      "ret_m6": null,
+      "ret_m12": null
+    },
+    {
+      "month": "2026-03",
+      "label": "Mär 2026",
+      "n": 35,
+      "rev_m0": 6090,
+      "rev_m1": 3640,
+      "rev_m3": null,
+      "rev_m6": null,
+      "rev_m12": null,
+      "ret_m3": null,
+      "ret_m6": null,
+      "ret_m12": null
+    },
+    {
+      "month": "2026-04",
+      "label": "Apr 2026",
+      "n": 42,
+      "rev_m0": 7180,
+      "rev_m1": null,
+      "rev_m3": null,
+      "rev_m6": null,
+      "rev_m12": null,
+      "ret_m3": null,
+      "ret_m6": null,
+      "ret_m12": null
+    },
+    {
+      "month": "2026-05",
+      "label": "Mai 2026",
+      "n": 12,
+      "rev_m0": 2050,
+      "rev_m1": null,
+      "rev_m3": null,
+      "rev_m6": null,
+      "rev_m12": null,
+      "ret_m3": null,
+      "ret_m6": null,
+      "ret_m12": null
+    }
   ],
   "voice_of_customer": {
-    "total_reviews_analyzed": 120,
-    "real_review_corpus_size": 1904,
-    "cluster_count": 18,
-    "top_wishes": [
-      { "rank": 1, "wish": "Body-Contouring / Cryolipolyse", "confidence": 0.50, "cluster_size": 9, "evidence_ids": ["rev_069", "rev_117"], "sample": "Frage zu eurem Angebot: macht ihr auch Body-Contouring / Cryolipolyse? Wäre interessiert.", "revenue_potential": "hoch" },
-      { "rank": 2, "wish": "Permanent-Make-up Entfernung", "confidence": 0.50, "cluster_size": 9, "evidence_ids": ["rev_117"], "sample": "Frage: bietet ihr eigentlich auch Permanent-Make-up Entfernung an? Hab von früher noch Reste die weg sollen.", "revenue_potential": "mittel" },
-      { "rank": 3, "wish": "Lymphdrainage", "confidence": 0.40, "cluster_size": 9, "evidence_ids": ["rev_051"], "sample": "Frage: macht ihr auch Endermologie / Lymphdrainage? Würde gerne in einer Hand alles haben.", "revenue_potential": "mittel" },
-      { "rank": 4, "wish": "Microblading-Entfernung", "confidence": 0.40, "cluster_size": 8, "evidence_ids": ["rev_079"], "sample": "Frage am Rande: bietet ihr auch Microblading-Entfernung an für alte Behandlungen? Würde gerne wechseln.", "revenue_potential": "mittel" },
-      { "rank": 5, "wish": "Gesichts-Yoga / Massage", "confidence": 0.40, "cluster_size": 8, "evidence_ids": ["rev_089"], "sample": "Frage: gibt's bei euch auch Massage / Gesichts-Yoga? Würde gerne mehr Wellness mit reinnehmen.", "revenue_potential": "niedrig" },
-      { "rank": 6, "wish": "IPL", "confidence": 0.40, "cluster_size": 6, "evidence_ids": ["rev_106"], "sample": "Würde mir wünschen, dass ihr auch IPL anbietet — sonst alles perfekt!", "revenue_potential": "hoch" },
-      { "rank": 7, "wish": "Karbon-Peeling", "confidence": 0.50, "cluster_size": 3, "evidence_ids": ["rev_024", "rev_101"], "sample": "Frage in den Raum: bietet ihr auch Karbon-Peeling an? Wäre sehr interessiert wenn ja!", "revenue_potential": "mittel" },
-      { "rank": 8, "wish": "Wimpernlifting", "confidence": 0.50, "cluster_size": 3, "evidence_ids": ["rev_010", "rev_045"], "sample": "Frage: macht ihr auch Wimpernlifting? Würde ich gerne bei euch machen lassen weil ich so positives gehört habe.", "revenue_potential": "niedrig" },
-      { "rank": 9, "wish": "Wimpernverlängerung", "confidence": 0.50, "cluster_size": 3, "evidence_ids": ["rev_045"], "sample": "Würde gerne mal eine Wimpernverlängerung bei euch machen lassen, bietet ihr sowas an?", "revenue_potential": "niedrig" }
+    "total_reviews_analyzed": 2199,
+    "real_review_corpus_size": 2440,
+    "audit_date": "2026-05-12",
+    "sources_scraped": [
+      {
+        "source": "google",
+        "count": 1866,
+        "avg_rating": 4.84,
+        "date_range": "2017-04 → 2026-05",
+        "scraper": "Serper /reviews API (Place ID ChIJk3DB-uhQqEcRQcnHvjNc0-8)"
+      },
+      {
+        "source": "treatwell",
+        "count": 483,
+        "avg_rating": 4.65,
+        "date_range": "2024-10 → 2026-05",
+        "scraper": "Jina Reader paginated salon-profile (97 pages)"
+      },
+      {
+        "source": "trustpilot",
+        "count": 91,
+        "avg_rating": 3.9,
+        "date_range": "2023-09 → 2026-05",
+        "scraper": "Jina Reader paginated reviews"
+      }
     ],
+    "cluster_count": 16,
+    "embeddings_real": false,
+    "embeddings_note": "Pipeline lief mit deterministischem Mock — Zähl-Aussagen (Mary 255×, Einwand-Frequenzen, Sentiment-Baseline) sind regex-deterministisch und KORREKT. Cluster-Labels + LLM-Wish-Extraktion brauchen OPENAI_API_KEY für nächste Iteration.",
+    "top_wishes": [],
+    "top_wishes_note": "LLM-basierte Wunsch-Extraktion wartet auf OPENAI_API_KEY. M2-Pipeline ist fertig — Re-Run mit Key dauert <2 Min.",
     "staff": [
-      { "name": "Mary", "role": "Inhaberin & Hauptbehandlerin", "mentions": 55, "avg_rating_when_mentioned": 4.98, "samples": ["Mesotherapie für Haarwuchs nach 4 Behandlungen sichtbar mehr Volumen. Mary war sehr ehrlich was möglich ist.", "Hatte etwas Schmerzen bei der Filler-Behandlung aber Mary war sofort da mit Kühlung. Ergebnis fantastisch.", "Lippen Filler — kein Entenschnabel, sieht aus als wären sie immer so gewesen. Mary versteht ihr Handwerk."] },
-      { "name": "Sarah", "role": "Brow Bar / Beratung", "mentions": 12, "avg_rating_when_mentioned": 5.00, "samples": ["Tolle Beratung von Sarah, fühle mich endlich gut aufgehoben. Microblading sieht super natürlich aus.", "NCTF Behandlung jetzt zum dritten Mal, Haut sieht so frisch aus. Sarah ist immer so freundlich.", "Hatte Angst vor Mesotherapie wegen Nadeln, aber Sarah hat alles begleitet — null Schmerzen."] },
-      { "name": "Cecilia", "role": "Hydrafacial / Laser", "mentions": 6, "avg_rating_when_mentioned": 4.83, "samples": ["Cecilia macht mein Hydrafacial — kompetent, freundlich, immer pünktlich. Lieblingsmitarbeiterin!", "Microneedling Termin top organisiert, Cecilia war so lieb und kompetent. Studio sehr sauber.", "Cecilia hat mein PicoPlus gemacht — sehr nett, sehr kompetent, hat Schmerzen minimiert."] },
-      { "name": "Laura", "role": "Brow-Lift", "mentions": 2, "avg_rating_when_mentioned": 5.00, "samples": ["Laura hat mir mein Brow-Lift gemacht — bin total happy! 💖 So entspannte Atmosphäre.", "Brow-Lift mit Laura — sehr geduldig, alles erklärt, Ergebnis natürlich."] }
+      {
+        "name": "Mary",
+        "role": "Inhaberin & Hauptbehandlerin",
+        "mentions": 255,
+        "avg_rating_when_mentioned": 4.83,
+        "samples": [
+          "Du Mary, bist eine Künstlerin und es ist schön, dass es dich gibt 🤎\n\nIch habe schon einige Erfahrungen gemacht, die mich vorsichtig werden ließen. Danach fiel es mir lange schwer, Vertrauen zu fassen – ich hätte mir nie",
+          "Ich war bei Brow by Mary zur Lippenbehandlung und bin einfach nur begeistert. Mary (die Chefin persönlich) hat meine Lippen gemacht mit so viel Geduld, Mühe und Liebe zum Detail. Mary ist ein unglaublich sympathischer, a",
+          "Ich kann Browbar mit 5 vollen und zufriedenen Sternen weiterempfehlen! Ich habe mir die Lippen mit 0,5ml spritzen lassen, zuerst wurde ich super lieb und herzlich empfangen. Dazu wurde ich auch sehr gut über alles aufgek"
+        ]
+      }
     ],
+    "treatwell_staff_context": [
+      {
+        "name": "Emine",
+        "mentions_treatwell_only": 34,
+        "role": "Top-Behandlerin Treatwell-Lane"
+      },
+      {
+        "name": "Linn",
+        "mentions_treatwell_only": 16,
+        "role": "Behandlerin"
+      },
+      {
+        "name": "Merve",
+        "mentions_treatwell_only": 12,
+        "role": "Behandlerin"
+      },
+      {
+        "name": "Leen",
+        "mentions_treatwell_only": 6,
+        "role": "Behandlerin"
+      }
+    ],
+    "staff_note": "M2 sucht im Public-Korpus nur nach {Mary, Sarah, Cecilia, Laura, Georg}. Treatwell-Reviews zeigen aber Emine 34×, Linn 16×, Merve 12×, Leen 6× — diese vier sind die operativen Behandlerinnen. Sarah, Cecilia, Laura: 0 in echten Public Reviews.",
     "objections": [
-      { "pattern": "Angst vor Behandlung", "frequency": 6, "avg_rating": 5.00, "type": "soft", "remedy": "30-Sek Pre-Treatment-Briefing (Pascal kann Template liefern)" },
-      { "pattern": "Schmerzempfinden", "frequency": 5, "avg_rating": 5.00, "type": "soft", "remedy": "Kühlung + Verlauf-Erklärung im Briefing" },
-      { "pattern": "Generelle Enttäuschung", "frequency": 3, "avg_rating": 1.33, "type": "hard", "remedy": "Postbehandlungs-Anruf am Tag 2 — fängt Beschwerden bevor sie öffentlich werden" },
-      { "pattern": "Asymmetrie / Schiefheit", "frequency": 3, "avg_rating": 1.67, "type": "hard", "remedy": "Kostenlose Korrektur klar kommunizieren (heute schon Praxis aber nicht im Erstgespräch)" },
-      { "pattern": "Preis-Wahrnehmung", "frequency": 3, "avg_rating": 2.33, "type": "mid", "remedy": "Value-Pre-Frame im Erstgespräch (vs. Kettenstudios)" },
-      { "pattern": "Unzufriedenheit ohne Grund", "frequency": 3, "avg_rating": 3.00, "type": "mid", "remedy": "Online-Buchung User-Test (Sample-Reviews nennen sie kompliziert)" },
-      { "pattern": "Wartezeit", "frequency": 3, "avg_rating": 3.67, "type": "mid", "remedy": "Puffer zwischen Slots oder SMS-Update bei Verzug" },
-      { "pattern": "Beratungs-Atmosphäre", "frequency": 2, "avg_rating": 2.00, "type": "hard", "remedy": "Nicht überbuchen an Reel-Filming-Tagen" },
-      { "pattern": "Schwellung / Downtime", "frequency": 2, "avg_rating": 3.00, "type": "soft", "remedy": "Realistische Downtime-Erwartung im Buchungs-Flow" },
-      { "pattern": "Hämatom / blaue Flecken", "frequency": 2, "avg_rating": 3.50, "type": "soft", "remedy": "Aftercare-PDF per WhatsApp 1h nach Behandlung" }
+      {
+        "rank": 1,
+        "pattern": "Unzufriedenheit ohne genannten Grund",
+        "frequency": 87,
+        "avg_rating": 2.05,
+        "severity": "hard",
+        "sample_quote": "Ich habe eine kostenlose Beratung mit Hautanalyse gebucht und pünktlich wahrgenommen. Mein Name wurde emotionslos aufgerufen, keine Begrüßung, kein Lächeln, kein freundliches Wort. Im Behandlungsraum ",
+        "remedy": "Empfangs-Ritual: Begrüßung + Name + Lächeln. 30-Sek-Check zu Beginn jeder Behandlung."
+      },
+      {
+        "rank": 2,
+        "pattern": "Schmerzempfinden",
+        "frequency": 60,
+        "avg_rating": 4.65,
+        "severity": "soft",
+        "sample_quote": "…ei einer Lippenunterspritzung. Die Behandlung war nicht nur schmerzhaft und traumatisch, sondern auch das Ergebnis ist völlig unzufriedenstellend.\n\nProbleme:\n\t•\tNach der Behandlung traten…",
+        "remedy": "Betäubung VOR Beginn klären, Aufklärung im Erstgespräch über typischen Verlauf."
+      },
+      {
+        "rank": 3,
+        "pattern": "Behandlungsdauer/Wartezeit",
+        "frequency": 52,
+        "avg_rating": 4.29,
+        "severity": "soft",
+        "sample_quote": "…ben wir dann auch endlich etwas zu trinken bekommen für die Wartezeit. Nach längerer Wartezeit haben wir mehrere Male Nachgefragt, wann wir denn jetzt endlich dran seien und wurden zum drit…",
+        "remedy": "SMS-Update bei Verzug >10 Min. Puffer-Slots zwischen Behandlungen."
+      },
+      {
+        "rank": 4,
+        "pattern": "Angst vor Behandlung",
+        "frequency": 40,
+        "avg_rating": 4.78,
+        "severity": "soft",
+        "sample_quote": "…nde und so ein blaues Balken Tattoo im Gesicht meine größte Angst war.\n\nDabei ging es mir aber primär nur darum, dass eine angeblich temporäre Behandlung aufgrund eines offensichtlich f…",
+        "remedy": "30-Sek Pre-Treatment-Briefing — schon stark gehandhabt (ø 4.78)."
+      },
+      {
+        "rank": 5,
+        "pattern": "Verkaufs-Druck-Sorge",
+        "frequency": 35,
+        "avg_rating": 4.37,
+        "severity": "soft",
+        "sample_quote": "…Studio nicht mehr erlebt habe.\n\nZusätzlich hatte ich den Eindruck, dass der Umgang im Studio teilweise wenig professionell war, wodurch ich mich nicht durchgehend respektvoll behandelt…",
+        "remedy": "Beratung & Behandlung räumlich trennen. Add-Ons schriftlich + optional."
+      },
+      {
+        "rank": 6,
+        "pattern": "Generelle Enttäuschung",
+        "frequency": 27,
+        "avg_rating": 2.52,
+        "severity": "hard",
+        "sample_quote": "…ich nicht sehr happy mit dem Service und der Behandlung.\nAm enttäuschtesten fand ich, dass die Ärztin zu der Empfangsdame am Ende bei meiner Bezahlung meinte: „diesmal in nur 8 Minuten, bei…",
+        "remedy": "Postbehandlungs-Anruf Tag 2. Korrekturen aktiv anbieten BEVOR Reviews entstehen."
+      },
+      {
+        "rank": 7,
+        "pattern": "Hämatom-/blaue-Flecken-Sorge",
+        "frequency": 15,
+        "avg_rating": 4.13,
+        "severity": "soft",
+        "sample_quote": "…e Augenbrauen inzwischen absolut furchtbar finde und so ein blaues Balken Tattoo im Gesicht meine größte Angst war.\n\nDabei ging es mir aber primär nur darum, dass eine angeblich tempor…",
+        "remedy": "Aftercare-PDF per WhatsApp 1h nach Behandlung. Erwartungs-Management vor Spritzen."
+      },
+      {
+        "rank": 8,
+        "pattern": "Asymmetrie-/Schiefheits-Sorge",
+        "frequency": 12,
+        "avg_rating": 2.92,
+        "severity": "hard",
+        "sample_quote": "…lassen – doch nur in der Brow Bar By Mary ging es komplett schief. Meine Augenbrauen sind schief, mein Lid hängt (trotz Browlift), und das Ergebnis ist einfach unästhetisch. Ich bin sup…",
+        "remedy": "Vorzeichnung in jedem Termin. Foto vor/nach. Kostenlose Korrektur explizit kommunizieren."
+      },
+      {
+        "rank": 9,
+        "pattern": "Über-/Unterdosierung",
+        "frequency": 11,
+        "avg_rating": 3.45,
+        "severity": "mid",
+        "sample_quote": "…habe, erst auf Nachfrage hieß es 0,8 ml, was ich persönlich zu viel finde.\nDann wurde ich nicht vorab über den Preis informiert. Am Ende erhielt ich keine Pflegesalbe oder ähnliches, auf…",
+        "remedy": "ml-Angabe schriftlich BEVOR Behandlung beginnt. Preis-Transparenz vor jedem Stich."
+      },
+      {
+        "rank": 10,
+        "pattern": "Schwellung & Downtime",
+        "frequency": 11,
+        "avg_rating": 4.55,
+        "severity": "soft",
+        "sample_quote": "…einer der Behandlungen kam es bei mir zu einer sehr starken Schwellung und auffälligen Reaktion, die ich so bei einer späteren Behandlung in einem anderen Studio nicht mehr erlebt habe.\n\nZus…",
+        "remedy": "Realistische Downtime-Erwartung im Buchungs-Flow + Aftercare-Card."
+      }
     ],
     "sentiment_28m": [
-      { "month": "2024-01", "n": 4, "rating": 4.75, "sentiment": 0.88, "rolling_3m": null },
-      { "month": "2024-02", "n": 5, "rating": 4.60, "sentiment": 0.80, "rolling_3m": 0.76 },
-      { "month": "2024-03", "n": 5, "rating": 4.20, "sentiment": 0.60, "rolling_3m": 0.67 },
-      { "month": "2024-04", "n": 5, "rating": 4.20, "sentiment": 0.60, "rolling_3m": 0.70 },
-      { "month": "2024-05", "n": 5, "rating": 4.80, "sentiment": 0.90, "rolling_3m": 0.77 },
-      { "month": "2024-06", "n": 5, "rating": 4.60, "sentiment": 0.80, "rolling_3m": 0.86 },
-      { "month": "2024-07", "n": 4, "rating": 4.75, "sentiment": 0.88, "rolling_3m": 0.79 },
-      { "month": "2024-08", "n": 5, "rating": 4.40, "sentiment": 0.70, "rolling_3m": 0.69 },
-      { "month": "2024-09", "n": 5, "rating": 4.00, "sentiment": 0.50, "rolling_3m": 0.67 },
-      { "month": "2024-10", "n": 5, "rating": 4.60, "sentiment": 0.80, "rolling_3m": 0.77 },
-      { "month": "2024-11", "n": 5, "rating": 5.00, "sentiment": 1.00, "rolling_3m": 0.83 },
-      { "month": "2024-12", "n": 5, "rating": 4.40, "sentiment": 0.70, "rolling_3m": 0.86 },
-      { "month": "2025-01", "n": 4, "rating": 4.75, "sentiment": 0.88, "rolling_3m": 0.78 },
-      { "month": "2025-02", "n": 4, "rating": 4.50, "sentiment": 0.75, "rolling_3m": 0.88 },
-      { "month": "2025-03", "n": 5, "rating": 5.00, "sentiment": 1.00, "rolling_3m": 0.71 },
-      { "month": "2025-04", "n": 4, "rating": 3.75, "sentiment": 0.38, "rolling_3m": 0.79 },
-      { "month": "2025-05", "n": 4, "rating": 5.00, "sentiment": 1.00, "rolling_3m": 0.76 },
-      { "month": "2025-06", "n": 5, "rating": 4.80, "sentiment": 0.90, "rolling_3m": 0.88 },
-      { "month": "2025-07", "n": 4, "rating": 4.50, "sentiment": 0.75, "rolling_3m": 0.76 },
-      { "month": "2025-08", "n": 4, "rating": 4.25, "sentiment": 0.63, "rolling_3m": 0.76 },
-      { "month": "2025-09", "n": 5, "rating": 4.80, "sentiment": 0.90, "rolling_3m": 0.84 },
-      { "month": "2025-10", "n": 4, "rating": 5.00, "sentiment": 1.00, "rolling_3m": 0.90 },
-      { "month": "2025-11", "n": 5, "rating": 4.60, "sentiment": 0.80, "rolling_3m": 0.89 },
-      { "month": "2025-12", "n": 4, "rating": 4.75, "sentiment": 0.88, "rolling_3m": 0.81 },
-      { "month": "2026-01", "n": 4, "rating": 4.50, "sentiment": 0.75, "rolling_3m": 0.88 },
-      { "month": "2026-02", "n": 3, "rating": 5.00, "sentiment": 1.00, "rolling_3m": 0.92 },
-      { "month": "2026-03", "n": 2, "rating": 5.00, "sentiment": 1.00, "rolling_3m": 1.00 },
-      { "month": "2026-05", "n": 1, "rating": 5.00, "sentiment": 1.00, "rolling_3m": null }
-    ]
+      {
+        "month": "2024-01",
+        "n": 6,
+        "rating": 4.167,
+        "sentiment": 0.583,
+        "rolling_3m": 0.817
+      },
+      {
+        "month": "2024-02",
+        "n": 21,
+        "rating": 4.857,
+        "sentiment": 0.929,
+        "rolling_3m": 0.766
+      },
+      {
+        "month": "2024-03",
+        "n": 7,
+        "rating": 4.571,
+        "sentiment": 0.786,
+        "rolling_3m": 0.811
+      },
+      {
+        "month": "2024-04",
+        "n": 16,
+        "rating": 4.438,
+        "sentiment": 0.719,
+        "rolling_3m": 0.805
+      },
+      {
+        "month": "2024-05",
+        "n": 11,
+        "rating": 4.818,
+        "sentiment": 0.909,
+        "rolling_3m": 0.858
+      },
+      {
+        "month": "2024-06",
+        "n": 46,
+        "rating": 4.891,
+        "sentiment": 0.946,
+        "rolling_3m": 0.933
+      },
+      {
+        "month": "2024-07",
+        "n": 36,
+        "rating": 4.889,
+        "sentiment": 0.944,
+        "rolling_3m": 0.952
+      },
+      {
+        "month": "2024-08",
+        "n": 30,
+        "rating": 4.933,
+        "sentiment": 0.967,
+        "rolling_3m": 0.939
+      },
+      {
+        "month": "2024-09",
+        "n": 27,
+        "rating": 4.815,
+        "sentiment": 0.907,
+        "rolling_3m": 0.926
+      },
+      {
+        "month": "2024-10",
+        "n": 37,
+        "rating": 4.811,
+        "sentiment": 0.905,
+        "rolling_3m": 0.921
+      },
+      {
+        "month": "2024-11",
+        "n": 173,
+        "rating": 4.902,
+        "sentiment": 0.951,
+        "rolling_3m": 0.859
+      },
+      {
+        "month": "2024-12",
+        "n": 59,
+        "rating": 4.441,
+        "sentiment": 0.72,
+        "rolling_3m": 0.854
+      },
+      {
+        "month": "2025-01",
+        "n": 60,
+        "rating": 4.783,
+        "sentiment": 0.892,
+        "rolling_3m": 0.799
+      },
+      {
+        "month": "2025-02",
+        "n": 67,
+        "rating": 4.567,
+        "sentiment": 0.784,
+        "rolling_3m": 0.818
+      },
+      {
+        "month": "2025-03",
+        "n": 52,
+        "rating": 4.558,
+        "sentiment": 0.779,
+        "rolling_3m": 0.764
+      },
+      {
+        "month": "2025-04",
+        "n": 57,
+        "rating": 4.456,
+        "sentiment": 0.728,
+        "rolling_3m": 0.75
+      },
+      {
+        "month": "2025-05",
+        "n": 62,
+        "rating": 4.484,
+        "sentiment": 0.742,
+        "rolling_3m": 0.746
+      },
+      {
+        "month": "2025-06",
+        "n": 30,
+        "rating": 4.533,
+        "sentiment": 0.767,
+        "rolling_3m": 0.753
+      },
+      {
+        "month": "2025-07",
+        "n": 32,
+        "rating": 4.5,
+        "sentiment": 0.75,
+        "rolling_3m": 0.77
+      },
+      {
+        "month": "2025-08",
+        "n": 24,
+        "rating": 4.583,
+        "sentiment": 0.792,
+        "rolling_3m": 0.826
+      },
+      {
+        "month": "2025-09",
+        "n": 165,
+        "rating": 4.873,
+        "sentiment": 0.936,
+        "rolling_3m": 0.903
+      },
+      {
+        "month": "2025-10",
+        "n": 124,
+        "rating": 4.96,
+        "sentiment": 0.98,
+        "rolling_3m": 0.919
+      },
+      {
+        "month": "2025-11",
+        "n": 25,
+        "rating": 4.68,
+        "sentiment": 0.84,
+        "rolling_3m": 0.74
+      },
+      {
+        "month": "2025-12",
+        "n": 20,
+        "rating": 3.8,
+        "sentiment": 0.4,
+        "rolling_3m": 0.739
+      },
+      {
+        "month": "2026-01",
+        "n": 42,
+        "rating": 4.952,
+        "sentiment": 0.976,
+        "rolling_3m": 0.625
+      },
+      {
+        "month": "2026-02",
+        "n": 19,
+        "rating": 4,
+        "sentiment": 0.5,
+        "rolling_3m": 0.706
+      },
+      {
+        "month": "2026-03",
+        "n": 21,
+        "rating": 4.286,
+        "sentiment": 0.643,
+        "rolling_3m": 0.606
+      },
+      {
+        "month": "2026-04",
+        "n": 20,
+        "rating": 4.35,
+        "sentiment": 0.675,
+        "rolling_3m": 0.328
+      },
+      {
+        "month": "2026-05",
+        "n": 12,
+        "rating": 2.333,
+        "sentiment": -0.333,
+        "rolling_3m": null
+      }
+    ],
+    "drift_events": [
+      {
+        "month": "2020-10",
+        "delta": 0.33,
+        "direction": "up"
+      },
+      {
+        "month": "2023-11",
+        "delta": 0.35,
+        "direction": "up"
+      }
+    ],
+    "recent_signal": {
+      "2026-05_n": 12,
+      "2026-05_rating": 2.33,
+      "2026-05_note": "Nur 12 Reviews bisher in May 2026. Monats-Anfang-Noise möglich, ABER 2.33 ø ist gegen 9-Jahres-Schnitt 4.84 markant. Bei Mary im Call aufzeigen — welche 12 Reviews, welche Themen, ob's auf einen Treiber zurückgeht."
+    }
   },
   "seo": {
     "niche_pages": [
-      { "slug": "botox-maenner-berlin", "title": "Faltenbehandlung Männer Berlin", "live": true, "indexed": true, "lastmod": "2026-05-10", "schema": "BreadcrumbList", "priority": 0.9 },
-      { "slug": "sculptra-berlin", "title": "Sculptra Berlin-Charlottenburg", "live": true, "indexed": true, "lastmod": "2026-05-10", "schema": "Service + FAQPage", "priority": 0.9 },
-      { "slug": "fadenlifting-berlin", "title": "Fadenlifting Berlin", "live": true, "indexed": true, "lastmod": "2026-05-10", "schema": "Service + FAQPage", "priority": 0.9 },
-      { "slug": "pigmentflecken-berlin", "title": "Pigmentflecken Berlin", "live": true, "indexed": true, "lastmod": "2026-05-10", "schema": "Service + FAQPage", "priority": 0.9 },
-      { "slug": "kombi-behandlungen-berlin", "title": "Kombi-Behandlungen Berlin", "live": true, "indexed": true, "lastmod": "2026-05-10", "schema": "Service + FAQPage", "priority": 0.9 },
-      { "slug": "polynukleotide-pdrn-berlin", "title": "Polynukleotide / PDRN Beratung Berlin", "live": true, "indexed": true, "lastmod": "2026-05-11", "schema": "Service", "priority": 0.9 },
-      { "slug": "nctf-behandlung-berlin", "title": "NCTF Skinbooster Beratung Berlin", "live": true, "indexed": true, "lastmod": "2026-05-11", "schema": "Service", "priority": 0.9 },
-      { "slug": "rosacea-couperose-berlin", "title": "Rosacea / Couperose Berlin", "live": true, "indexed": true, "lastmod": "2026-05-11", "schema": "Service", "priority": 0.9 },
-      { "slug": "mesotherapie-beratung-berlin", "title": "Mesotherapie-Beratung Berlin", "live": true, "indexed": true, "lastmod": "2026-05-11", "schema": "Service", "priority": 0.9 },
-      { "slug": "laser-dunkle-haut-charlottenburg", "title": "Laser für dunkle Haut Charlottenburg", "live": true, "indexed": true, "lastmod": "2026-05-11", "schema": "Service", "priority": 0.9 }
+      {
+        "slug": "botox-maenner-berlin",
+        "title": "Faltenbehandlung Männer Berlin",
+        "live": true,
+        "indexed": true,
+        "lastmod": "2026-05-10",
+        "schema": "BreadcrumbList",
+        "priority": 0.9
+      },
+      {
+        "slug": "sculptra-berlin",
+        "title": "Sculptra Berlin-Charlottenburg",
+        "live": true,
+        "indexed": true,
+        "lastmod": "2026-05-10",
+        "schema": "Service + FAQPage",
+        "priority": 0.9
+      },
+      {
+        "slug": "fadenlifting-berlin",
+        "title": "Fadenlifting Berlin",
+        "live": true,
+        "indexed": true,
+        "lastmod": "2026-05-10",
+        "schema": "Service + FAQPage",
+        "priority": 0.9
+      },
+      {
+        "slug": "pigmentflecken-berlin",
+        "title": "Pigmentflecken Berlin",
+        "live": true,
+        "indexed": true,
+        "lastmod": "2026-05-10",
+        "schema": "Service + FAQPage",
+        "priority": 0.9
+      },
+      {
+        "slug": "kombi-behandlungen-berlin",
+        "title": "Kombi-Behandlungen Berlin",
+        "live": true,
+        "indexed": true,
+        "lastmod": "2026-05-10",
+        "schema": "Service + FAQPage",
+        "priority": 0.9
+      },
+      {
+        "slug": "polynukleotide-pdrn-berlin",
+        "title": "Polynukleotide / PDRN Beratung Berlin",
+        "live": true,
+        "indexed": true,
+        "lastmod": "2026-05-11",
+        "schema": "Service",
+        "priority": 0.9
+      },
+      {
+        "slug": "nctf-behandlung-berlin",
+        "title": "NCTF Skinbooster Beratung Berlin",
+        "live": true,
+        "indexed": true,
+        "lastmod": "2026-05-11",
+        "schema": "Service",
+        "priority": 0.9
+      },
+      {
+        "slug": "rosacea-couperose-berlin",
+        "title": "Rosacea / Couperose Berlin",
+        "live": true,
+        "indexed": true,
+        "lastmod": "2026-05-11",
+        "schema": "Service",
+        "priority": 0.9
+      },
+      {
+        "slug": "mesotherapie-beratung-berlin",
+        "title": "Mesotherapie-Beratung Berlin",
+        "live": true,
+        "indexed": true,
+        "lastmod": "2026-05-11",
+        "schema": "Service",
+        "priority": 0.9
+      },
+      {
+        "slug": "laser-dunkle-haut-charlottenburg",
+        "title": "Laser für dunkle Haut Charlottenburg",
+        "live": true,
+        "indexed": true,
+        "lastmod": "2026-05-11",
+        "schema": "Service",
+        "priority": 0.9
+      }
     ],
     "search_console": {
       "available": false,
       "note": "Tag-23 plug-in via Service-Account. Heute Sample-Werte.",
       "sample_top_queries": [
-        { "query": "faltenbehandlung männer berlin", "clicks": 12, "impressions": 218, "position": 4.2 },
-        { "query": "sculptra berlin", "clicks": 9, "impressions": 305, "position": 6.8 },
-        { "query": "fadenlifting charlottenburg", "clicks": 7, "impressions": 142, "position": 3.5 },
-        { "query": "pigmentflecken laser berlin", "clicks": 6, "impressions": 198, "position": 7.2 },
-        { "query": "kombi behandlung gesicht berlin", "clicks": 5, "impressions": 124, "position": 5.6 }
+        {
+          "query": "faltenbehandlung männer berlin",
+          "clicks": 12,
+          "impressions": 218,
+          "position": 4.2
+        },
+        {
+          "query": "sculptra berlin",
+          "clicks": 9,
+          "impressions": 305,
+          "position": 6.8
+        },
+        {
+          "query": "fadenlifting charlottenburg",
+          "clicks": 7,
+          "impressions": 142,
+          "position": 3.5
+        },
+        {
+          "query": "pigmentflecken laser berlin",
+          "clicks": 6,
+          "impressions": 198,
+          "position": 7.2
+        },
+        {
+          "query": "kombi behandlung gesicht berlin",
+          "clicks": 5,
+          "impressions": 124,
+          "position": 5.6
+        }
       ]
     }
   },
   "system_health": {
     "components": [
-      { "id": "M11", "name": "Niche-Pages Pre-Build", "status": "live", "detail": "10 / 10 HTTP 200, alle in Sitemap, IndexNow gepingt 2026-05-11", "url": "https://pfassmeyer.github.io/mary-site-preview/sitemap.xml" },
-      { "id": "M3",  "name": "Dashboard CLI",          "status": "live", "detail": "1.036 LOC Bun TS, läuft auf Sample. Shore-Export aktiviert Buchungen + Cohort + LTV — ohne Inhaberschaft.", "url": null },
-      { "id": "M2",  "name": "Review Intelligence",    "status": "live", "detail": "1.927 LOC, 4/4 Tests grün, Sample-Lauf 0.9s. 1.904 Reviews sind öffentlich → public scrape liefert echte Daten ohne GBP-Inhaberschaft.", "url": null },
-      { "id": "M6",  "name": "HWG Compliance Memo",    "status": "live", "detail": "1-Pager an Mary übergeben (10.05). Linter-Stufe pending.", "url": null },
-      { "id": "M9",  "name": "iPad Source-Capture",    "status": "ready", "detail": "€40 Hardware + Tally Form. Liefert echte Attribution-Ground-Truth UNABHÄNGIG von GBP-Insights. 6 Wochen = 1.200 Datenpunkte.", "url": null },
-      { "id": "M5",  "name": "One-Day Indexation",     "status": "ready", "detail": "Aktiviert sobald Marys Domain-Zugang da ist.", "url": null },
-      { "id": "M10", "name": "GBP-Public-Snapshot",    "status": "ready", "detail": "SerpAPI Place-Details liefert Rating, Review-Count, Photo-Count, Q&A, Posts — alles öffentlich, KEINE Inhaberschaft. Tägliche Snapshots in Dashboard möglich.", "url": null },
-      { "id": "M12", "name": "Google-Reclaim Pfad",   "status": "ready", "detail": "support.google.com/business/answer/4566671 → Mary fordert direkt an. Google sendet 7-Tage-Frist an alte Inhaberin. Bei Non-Reaktion: automatischer Übergang. Postkarten-Fallback an Bleibtreustraße 18 wenn nötig.", "url": "https://support.google.com/business/answer/4566671" }
+      {
+        "id": "M11",
+        "name": "Niche-Pages Pre-Build",
+        "status": "live",
+        "detail": "10 / 10 HTTP 200, alle in Sitemap, IndexNow gepingt 2026-05-11",
+        "url": "https://pfassmeyer.github.io/mary-site-preview/sitemap.xml"
+      },
+      {
+        "id": "M3",
+        "name": "Dashboard CLI",
+        "status": "live",
+        "detail": "1.036 LOC Bun TS, läuft auf Sample. Shore-Export aktiviert Buchungen + Cohort + LTV — ohne Inhaberschaft.",
+        "url": null
+      },
+      {
+        "id": "M2",
+        "name": "Review Intelligence",
+        "status": "live",
+        "detail": "1.927 LOC, 4/4 Tests grün, Sample-Lauf 0.9s. 1.904 Reviews sind öffentlich → public scrape liefert echte Daten ohne GBP-Inhaberschaft.",
+        "url": null
+      },
+      {
+        "id": "M6",
+        "name": "HWG Compliance Memo",
+        "status": "live",
+        "detail": "1-Pager an Mary übergeben (10.05). Linter-Stufe pending.",
+        "url": null
+      },
+      {
+        "id": "M9",
+        "name": "iPad Source-Capture",
+        "status": "ready",
+        "detail": "€40 Hardware + Tally Form. Liefert echte Attribution-Ground-Truth UNABHÄNGIG von GBP-Insights. 6 Wochen = 1.200 Datenpunkte.",
+        "url": null
+      },
+      {
+        "id": "M5",
+        "name": "One-Day Indexation",
+        "status": "ready",
+        "detail": "Aktiviert sobald Marys Domain-Zugang da ist.",
+        "url": null
+      },
+      {
+        "id": "M10",
+        "name": "GBP-Public-Snapshot",
+        "status": "ready",
+        "detail": "SerpAPI Place-Details liefert Rating, Review-Count, Photo-Count, Q&A, Posts — alles öffentlich, KEINE Inhaberschaft. Tägliche Snapshots in Dashboard möglich.",
+        "url": null
+      },
+      {
+        "id": "M12",
+        "name": "Google-Reclaim Pfad",
+        "status": "ready",
+        "detail": "support.google.com/business/answer/4566671 → Mary fordert direkt an. Google sendet 7-Tage-Frist an alte Inhaberin. Bei Non-Reaktion: automatischer Übergang. Postkarten-Fallback an Bleibtreustraße 18 wenn nötig.",
+        "url": "https://support.google.com/business/answer/4566671"
+      }
     ],
     "tag_23_countdown": {
       "target": "Echte Daten ins Dashboard — DREI parallele Pfade",
@@ -155,22 +807,35 @@
       "id": "D1",
       "title": "Joint KPI staken: Revenue-per-Chair-Hour bei HWG-Quality",
       "leverage": "Meadows #3 — Goal of the system",
-      "options": ["bestätigen", "anders formulieren", "vertagen"],
+      "options": [
+        "bestätigen",
+        "anders formulieren",
+        "vertagen"
+      ],
       "default": "bestätigen"
     },
     {
       "id": "D2",
       "title": "Top-3 unmonetarisierte Wünsche prüfen — Body-Contouring, PMU-Entfernung, Lymphdrainage",
       "leverage": "Meadows #11 — Stocks/Buffers (Service-Portfolio)",
-      "options": ["alle drei evaluieren", "nur eines", "keines"],
+      "options": [
+        "alle drei evaluieren",
+        "nur eines",
+        "keines"
+      ],
       "default": "alle drei evaluieren"
     },
     {
       "id": "D3",
       "title": "Sarah-IG-Bot HWG-Remediation: Material Fillmed-Hinweis einbauen (Sarah 11.05 19:35 angefragt)",
       "leverage": "Meadows #8 — Balancing loop (HWG-linter)",
-      "options": ["sofort patchen", "im nächsten Sprint", "Bot ersetzen"],
+      "options": [
+        "sofort patchen",
+        "im nächsten Sprint",
+        "Bot ersetzen"
+      ],
       "default": "sofort patchen"
     }
-  ]
+  ],
+  "data_state_note": "Reviews: ECHT (2.199 audited reviews aus Google + Trustpilot + Treatwell). Buchungen + Cohorts: noch SAMPLE (Shore-CSV-Export landet diese Woche). M11: ECHT (10 Niche-Pages live, alle HTTP 200)."
 }
