@@ -874,10 +874,23 @@ function showTab(name) {
 /* ───────────────── Init ───────────────── */
 async function init() {
   try {
-    const resp = await fetch("data.json?v=" + Date.now());
-    DATA = await resp.json();
+    const resp = await fetch("data.json?v=" + Date.now(), { cache: "no-store" });
+    if (!resp.ok) throw new Error("HTTP " + resp.status);
+    const txt = await resp.text();
+    try { DATA = JSON.parse(txt); }
+    catch (parseErr) {
+      console.error("JSON parse error", parseErr, "near:", txt.slice(0, 200));
+      throw parseErr;
+    }
   } catch (e) {
-    document.body.innerHTML = '<div style="padding: 40px; text-align: center; color: #c14a3a;">Daten konnten nicht geladen werden. Refresh probieren.</div>';
+    const err = $("#data-error");
+    if (err) {
+      $("#data-error-msg").textContent = String(e.message || e);
+      err.style.display = "block";
+    } else {
+      document.body.insertAdjacentHTML("afterbegin", `<div style="position:fixed;top:0;left:0;right:0;padding:14px;background:#fae5e1;color:#c14a3a;text-align:center;font-family:Inter,sans-serif;font-size:13px;z-index:200">Datenladen fehlgeschlagen: ${e.message}. Erneut probieren — Service-Worker holt sich frische Daten beim nächsten Reload.</div>`);
+    }
+    setTimeout(() => location.reload(), 4000);
     return;
   }
 

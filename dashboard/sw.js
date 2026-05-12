@@ -1,5 +1,5 @@
 /* Mary Dashboard — minimal service worker for offline + installability */
-const CACHE = "mary-dash-v1";
+const CACHE = "mary-dash-v2";
 const ASSETS = ["./", "./index.html", "./data.json", "./manifest.json", "./icon.svg"];
 
 self.addEventListener("install", (e) => {
