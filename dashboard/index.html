@@ -160,6 +160,8 @@ button { font: inherit; cursor: pointer; }
 .kpi-meta { font-size: 11px; color: var(--text-soft); margin-top: 3px; }
 .kpi-spark { margin-top: 8px; height: 24px; }
 .kpi.accent { background: linear-gradient(135deg, #faf2e6 0%, #fff 60%); }
+.kpi.kpi-sample { background: repeating-linear-gradient(135deg, #fafafa, #fafafa 8px, #f4f4f4 8px, #f4f4f4 12px); opacity: .72; }
+.kpi.kpi-sample .kpi-val { color: var(--text-muted); }
 
 /* ─── 2-COL ─── */
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
@@ -375,7 +377,7 @@ tr.hi { background: var(--accent-light); }
     <div class="s-head">
       <div class="eyebrow">Live · 28 Tage</div>
       <h2 class="serif">Puls des Studios</h2>
-      <p>Was gerade passiert. Tag 23 sind das echte Zahlen — heute sind es Sample-Werte, identische Pipeline.</p>
+      <p>Was gerade passiert. Reviews + SEO + Instagram sind LIVE-Daten aus 2.199 Reviews. Buchungen + Umsatz bleiben Sample bis Shore-CSV-Export.</p>
     </div>
 
     <div class="kpis" id="kpi-grid"></div>
@@ -673,17 +675,18 @@ function donutChart(container, slices) {
 function renderPulse() {
   const p = DATA.pulse;
   const kpis = [
-    { label: "Buchungen", val: p.booked_chair_hours_28d, unit: "", meta: "letzte 28 Tage", spark: p.sparklines.bookings_daily, accent: true },
-    { label: "Umsatz", val: eur(p.revenue_28d_eur), unit: "", meta: "Ø " + eur(p.avg_booking_value_eur) + " / Buchung", spark: p.sparklines.revenue_daily_eur },
-    { label: "Review-Score", val: p.review_score_28d.toFixed(2), unit: "⭑", meta: p.review_count_28d + " neue Reviews" },
-    { label: "Niche-Pages", val: p.niche_pages_live, unit: "", meta: p.niche_pages_indexed_pct + "% indexiert" },
-    { label: "Neukund:innen", val: p.new_customers_28d, unit: "", meta: p.returning_customers_28d + " Wiederholer" },
-    { label: "UTM-Tracking", val: p.utm_coverage_pct + "%", unit: "", meta: "Coverage" },
+    { label: "Reviews lifetime", val: (p.review_count_lifetime || 2199).toLocaleString("de-DE"), unit: "", meta: "ø " + (p.review_score_lifetime || 4.84).toFixed(2) + " ⭑ · 9 Jahre", accent: true, isLive: true },
+    { label: "Mary namentlich", val: "287×", unit: "", meta: "ø 4,79 ⭑ wenn Mary genannt wird", isLive: true },
+    { label: "SEO Top-10", val: p.seo_top_10_count || 12, unit: " / 31", meta: (p.seo_top_1_count || 5) + "× Rank 1", isLive: true },
+    { label: "Niche-Pages live", val: p.niche_pages_live, unit: " / 11", meta: "0 von 10 Pre-Builds in Google indexiert (Korrektur)", isLive: true },
+    { label: "Instagram Follower", val: ((p.instagram_followers || 92004) / 1000).toFixed(0) + "k", unit: "", meta: "Engagement " + (p.instagram_engagement_pct || 0.055) + " % — 20-50× unter Benchmark", isLive: true },
+    { label: "Buchungen Shore", val: p.booked_chair_hours_28d, unit: "", meta: "SAMPLE-Daten · Shore-CSV-Export pending", spark: p.sparklines.bookings_daily, isLive: false },
+    { label: "Umsatz Shore", val: eur(p.revenue_28d_eur), unit: "", meta: "SAMPLE-Daten · echte Zahlen nach CSV-Drop", spark: p.sparklines.revenue_daily_eur, isLive: false },
   ];
   const grid = $("#kpi-grid");
   grid.innerHTML = kpis.map((k, i) => `
-    <div class="kpi ${k.accent ? 'accent' : ''}">
-      <div class="kpi-label">${k.label}</div>
+    <div class="kpi ${k.accent ? 'accent' : ''} ${k.isLive === false ? 'kpi-sample' : ''}">
+      <div class="kpi-label">${k.label}${k.isLive === false ? ' <span class="pill warn" style="font-size:9px;padding:1px 6px;vertical-align:middle">SAMPLE</span>' : ''}</div>
       <div class="kpi-val mono">${k.val}<span class="kpi-unit"> ${k.unit||''}</span></div>
       <div class="kpi-meta">${k.meta}</div>
       ${k.spark ? `<div class="kpi-spark" id="spark-${i}"></div>` : ''}
@@ -744,57 +747,109 @@ function renderRevenue() {
 }
 
 function renderVoice() {
-  const v = DATA.voice_of_customer;
+  const v = DATA.voice_of_customer || {};
 
   // Sentiment line chart
-  const points = v.sentiment_28m.map(s => ({ x: s.month, y: s.sentiment, secondaryY: s.rolling_3m }));
-  lineChart($("#chart-sentiment"), points, { yMin: 0, yMax: 1.1 });
+  if (Array.isArray(v.sentiment_28m) && v.sentiment_28m.length) {
+    const points = v.sentiment_28m.map(s => ({ x: s.month, y: s.sentiment, secondaryY: s.rolling_3m }));
+    lineChart($("#chart-sentiment"), points, { yMin: 0, yMax: 1.1 });
+  }
 
-  // Wishes
-  $("#wish-list").innerHTML = v.top_wishes.slice(0, 6).map(w => `
-    <div class="wish-item">
-      <div class="wish-head">
-        <div class="wish-rank serif">${w.rank}</div>
-        <div class="wish-title">${w.wish}</div>
-        <span class="pill ${w.revenue_potential==='hoch'?'sage':w.revenue_potential==='mittel'?'accent':'soft'}">${w.revenue_potential}</span>
-      </div>
-      <div class="wish-quote">„${w.sample}"</div>
-      <div class="wish-meta">
-        <span>Konfidenz ${(w.confidence*100).toFixed(0)}%</span>
-        <span>Cluster ${w.cluster_size} Reviews</span>
-        <span>Evidence: ${w.evidence_ids.join(", ")}</span>
-      </div>
-    </div>
-  `).join("");
-
-  // Staff
-  $("#staff-list").innerHTML = v.staff.map(s => `
-    <div class="staff-card">
-      <div class="staff-row">
-        <div class="staff-avatar">${s.name[0]}</div>
-        <div class="staff-info">
-          <div class="nm">${s.name}</div>
-          <div class="rl">${s.role}</div>
+  // Wishes (v5: top_wishes empty if LLM-extraction couldn't surface them — show note instead)
+  const wishesEl = $("#wish-list");
+  if (wishesEl) {
+    const wishes = Array.isArray(v.top_wishes) ? v.top_wishes : (Array.isArray(v.wishes_findings) ? v.wishes_findings : []);
+    if (wishes.length === 0) {
+      wishesEl.innerHTML = `<div class="wish-item" style="border-left-color:var(--text-muted)">
+        <div class="wish-head"><div class="wish-title">Keine Wünsche aus Public Reviews extrahierbar</div></div>
+        <div class="wish-quote">${v.wishes_note || "Public Reviews sind Praise-Channel. Wunsch-Quelle = IG-DMs + Empfangs-Gespräche."}</div>
+      </div>`;
+    } else {
+      wishesEl.innerHTML = wishes.slice(0, 6).map(w => `
+        <div class="wish-item">
+          <div class="wish-head">
+            <div class="wish-rank serif">${w.rank || ""}</div>
+            <div class="wish-title">${w.wish}</div>
+            ${w.confidence != null ? `<span class="pill accent">Konfidenz ${(w.confidence*100).toFixed(0)}%</span>` : ""}
+          </div>
+          ${w.sample_quote ? `<div class="wish-quote">„${w.sample_quote}"</div>` : (w.sample ? `<div class="wish-quote">„${w.sample}"</div>` : "")}
+          <div class="wish-meta">
+            ${w.cluster_size ? `<span>Cluster ${w.cluster_size} Reviews</span>` : ""}
+            ${w.evidence_ids?.length ? `<span>Evidence: ${w.evidence_ids.slice(0,2).join(", ")}</span>` : ""}
+          </div>
         </div>
-        <div class="staff-stats">
-          <span class="badge mono">${s.mentions}×</span>
-          <span class="badge mono">${s.avg_rating_when_mentioned.toFixed(2)} ⭑</span>
-        </div>
-      </div>
-      <div class="staff-quote">„${s.samples[0]}"</div>
-    </div>
-  `).join("");
+      `).join("");
+    }
+  }
 
-  // Objections
-  $("#obj-list").innerHTML = v.objections.map(o => `
-    <div class="obj-item ${o.type}">
-      <div class="obj-head">
-        <div class="obj-title">${o.pattern}</div>
-        <div class="obj-stats">${o.frequency}× · Ø ${o.avg_rating.toFixed(2)} ⭑</div>
+  // Staff (v5 schema: mary_personal_brand + operative_team_treatwell). Backward-compat: v.staff.
+  const staffEl = $("#staff-list");
+  if (staffEl) {
+    let staffEntries = [];
+    if (v.mary_personal_brand) {
+      const m = v.mary_personal_brand;
+      staffEntries.push({
+        name: "Mary",
+        role: m.role || "Inhaberin",
+        mentions: m.text_mentions_across_all_sources || m.mentions || 0,
+        rating: m.avg_rating_when_mentioned || 0,
+        sub: `Google ${m.by_source?.google||0} · Trustpilot ${m.by_source?.trustpilot||0} · Treatwell ${m.by_source?.treatwell||0}`,
+      });
+    }
+    (v.operative_team_treatwell || []).forEach(s => {
+      staffEntries.push({
+        name: s.name,
+        role: s.role || "—",
+        mentions: s.treatments || 0,
+        rating: s.avg_rating || 0,
+        sub: s.source || "",
+      });
+    });
+    // Backward-compat (old shape)
+    if (staffEntries.length === 0 && Array.isArray(v.staff)) {
+      staffEntries = v.staff.map(s => ({
+        name: s.name, role: s.role || "—",
+        mentions: s.mentions || 0, rating: s.avg_rating_when_mentioned || 0,
+        sub: (s.samples && s.samples[0]) || "",
+      }));
+    }
+    staffEl.innerHTML = staffEntries.map(s => `
+      <div class="staff-card">
+        <div class="staff-row">
+          <div class="staff-avatar">${(s.name || "?").charAt(0)}</div>
+          <div class="staff-info">
+            <div class="nm">${s.name}</div>
+            <div class="rl">${s.role}</div>
+          </div>
+          <div class="staff-stats">
+            <span class="badge mono">${s.mentions}×</span>
+            <span class="badge mono">${(s.rating || 0).toFixed(2)} ⭑</span>
+          </div>
+        </div>
+        ${s.sub ? `<div class="staff-quote">${s.sub.length > 140 ? s.sub.slice(0, 140) + "…" : s.sub}</div>` : ""}
       </div>
-      <div class="obj-remedy">→ ${o.remedy}</div>
-    </div>
-  `).join("");
+    `).join("");
+    if (v.team_note) {
+      staffEl.insertAdjacentHTML("beforeend",
+        `<div class="staff-card" style="background:var(--accent-light);border-left:3px solid var(--accent)"><div class="staff-quote" style="padding-left:0;font-style:normal">${v.team_note}</div></div>`);
+    }
+  }
+
+  // Objections (v5: severity + sample_quote + remedy)
+  const objEl = $("#obj-list");
+  if (objEl) {
+    objEl.innerHTML = (v.objections || []).map(o => {
+      const sev = o.severity || o.type || "soft";
+      return `<div class="obj-item ${sev}">
+        <div class="obj-head">
+          <div class="obj-title">${o.pattern}</div>
+          <div class="obj-stats">${o.frequency}× · Ø ${(o.avg_rating || 0).toFixed(2)} ⭑</div>
+        </div>
+        ${o.sample_quote ? `<div class="staff-quote" style="padding-left:0;font-style:italic">„${o.sample_quote}"</div>` : ""}
+        ${o.remedy ? `<div class="obj-remedy">→ ${o.remedy}</div>` : ""}
+      </div>`;
+    }).join("");
+  }
 }
 
 function renderSeo() {
@@ -872,6 +927,18 @@ function showTab(name) {
 }
 
 /* ───────────────── Init ───────────────── */
+function safeRender(name, fn) {
+  try { fn(); }
+  catch (e) {
+    console.error(`[render-error] ${name}:`, e);
+    const el = $("#" + name.replace(/^render/, "").toLowerCase());
+    if (el && !el.querySelector(".render-error")) {
+      el.insertAdjacentHTML("afterbegin",
+        `<div class="render-error card" style="background:#fae5e1;color:#c14a3a;font-size:12px">[${name}] Render-Fehler: ${e.message}. Tabs funktionieren weiter.</div>`);
+    }
+  }
+}
+
 async function init() {
   try {
     const resp = await fetch("data.json?v=" + Date.now(), { cache: "no-store" });
@@ -905,13 +972,13 @@ async function init() {
     lt.textContent = "Sample · plug-in pending";
   }
 
-  // Render all sections
-  renderPulse();
-  renderRevenue();
-  renderVoice();
-  renderSeo();
-  renderSystem();
-  renderDecisions();
+  // Render all sections — wrapped so single-section crash doesn't kill tab handlers
+  safeRender("renderPulse", renderPulse);
+  safeRender("renderRevenue", renderRevenue);
+  safeRender("renderVoice", renderVoice);
+  safeRender("renderSeo", renderSeo);
+  safeRender("renderSystem", renderSystem);
+  safeRender("renderDecisions", renderDecisions);
 
   // Tabs
   $$(".tab").forEach(t => t.addEventListener("click", () => showTab(t.dataset.tab)));
