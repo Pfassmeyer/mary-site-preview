@@ -144,7 +144,7 @@
     ],
     "tag_23_countdown": {
       "target": "Echte Daten ins Dashboard — DREI parallele Pfade",
-      "blocked_by": "Korrektur 12.05: Laura hat das GBP nicht selbst — sie wartet seit 06.05 auch auf alte Agentur. „Sobald Laura zurückgibt" war falsches Framing.",
+      "blocked_by": "Korrektur 12.05: Laura hat das GBP nicht selbst — sie wartet seit 06.05 auch auf alte Agentur. Das frühere Framing (sobald Laura zurückgibt) war falsch.",
       "next_action": "Drei Pfade parallel: (A) Mary Shore-CSV-Export → echte Buchungen/Cohort/LTV heute. (B) Pascal public-scrape 1.904 Reviews → echtes M2 heute. (C) iPad-Empfangs-Capture bestellen → echte Attribution in 6 Wochen.",
       "fallback_after_days": 14,
       "fallback_action": "Google-Reclaim startet parallel; Postkarten-Verifikation an Praxisadresse als Last-Resort. Beides UNABHÄNGIG von alter Agentur."
